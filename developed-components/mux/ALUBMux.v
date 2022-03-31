@@ -1,7 +1,7 @@
-module mux_ulaB (
+module ALUBMux (
     input   wire  [2:0]    ALUSrcB,
     input   wire  [31:0]   B,             // 000
-    input   wire  [31:0]   Select_4,      // 001
+//  input   wire  [31:0]   Select_4,      // 001
     input   wire  [31:0]   Shift_Left_2,  // 010
     input   wire  [31:0]   Sign_Extend,   // 011
     input   wire  [31:0]   Mem_Data,      // 100
@@ -11,7 +11,7 @@ module mux_ulaB (
 
 
 // B             -----|
-// Select_4      -----|-- B_4 -------\
+// 4             -----|-- B_4 -------\
 //                                    |----|              
 // Shift_Left_2  -----|--Sign_Shift--/     |
 // Sign_Extend   -----|                    |
