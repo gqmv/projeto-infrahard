@@ -1,4 +1,4 @@
-`include "parts-made/WriteDataMux.v"
+`include "developed-components/mux/WriteDataMux.v"
 
 module WriteDataMuxTest();
 

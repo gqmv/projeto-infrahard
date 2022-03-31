@@ -1,4 +1,4 @@
-`include "parts-made/PCSrcCtrlMux.v"
+`include "developed-components/mux/PCSrcCtrlMux.v"
 
 module PCSrcCtrlMuxTest();
 reg [31:0] Exception_Destiny, EPC_Out, ALU_Out, Shift_Left_2;

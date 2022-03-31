@@ -1,4 +1,4 @@
-`include "parts-made/ALUBMux.v"
+`include "developed-components/mux/ALUBMux.v"
 
 module ALUBMuxTest();
 
