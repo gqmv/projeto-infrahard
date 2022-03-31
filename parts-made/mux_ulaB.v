@@ -1,4 +1,4 @@
-module ALUSrcBMux (
+module mux_ulaB (
     input   wire  [2:0]    selector,
     input   wire  [31:0]   B,             // 000
     //input wire  [31:0]   Select_4,      // 001

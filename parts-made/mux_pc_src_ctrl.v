@@ -1,4 +1,4 @@
-module PCSourceCtrlMux (
+module mux_pc_src_ctrl (
     input   wire  [1:0]    selector,
     input   wire  [31:0]   Exception_Destiny,   // 00
     input   wire  [31:0]   EPC_Out,             // 01
