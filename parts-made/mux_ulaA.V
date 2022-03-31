@@ -1,9 +1,9 @@
 module mux_ulaA(
 
-    input  wire [1:0]  ALUSrcA,
-    input  wire [31:0] PC,
-    input  wire [31:0] A,
-    input  wire [31:0] MDR,
+    input  wire [1:0]  ALUSrcA,  //00
+    input  wire [31:0] PC,       //01 
+    input  wire [31:0] A,        //10
+    input  wire [31:0] MDR,      //11
 
     output wire [31:0] Data_out
 
