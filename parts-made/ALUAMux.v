@@ -1,4 +1,4 @@
-module mux_ulaA(
+module ALUAMux(
 
     input  wire [1:0]  ALUSrcA,  //00
     input  wire [31:0] PC,       //01 
@@ -18,6 +18,6 @@ module mux_ulaA(
     wire [31:0] PC_A;
 
     assign PC_A = (ALUSrcA[0]) ? A : PC;
-    assign data_out = (ALUSrcA[1]) ? MDR : PC_A;
+    assign Data_out = (ALUSrcA[1]) ? MDR : PC_A;
 
 endmodule
