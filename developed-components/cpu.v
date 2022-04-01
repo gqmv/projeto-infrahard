@@ -62,12 +62,13 @@ module cpu(
     wire [31:0] MemDataOut;
     wire [31:0] InstructionIn;
     wire [31:0] ALUResult;
+    wire [31:0] WriteData;
 
 // Data Wires (Less than 32 BITS)
     wire [4:0] WriteRegOut;
 
 // Instructions
-    wire [4:0] Instruction_31_26; // OPCODE
+    wire [5:0] Instruction_31_26; // OPCODE
     wire [4:0] Instruction_25_21;
     wire [4:0] Instruction_20_16;
     wire [15:0] Instruction_15_0;
@@ -205,6 +206,12 @@ module cpu(
         Equals,
         GT,
         LT
+    );
+
+// Signal Extenders
+    SignExtend SignExtend_(
+        Instruction_15_0,
+        Sign_Extend
     );
 
 // Control Unit

@@ -77,16 +77,17 @@ module ctrl_unit(
     parameter Funct_Addm        =       6'b000101;
     
     // States
-    parameter ST_RESET          =       6'b000000;
-    parameter ST_FETCH          =       6'b000001;
-    parameter ST_FETCH2         =       6'b000010;
-    parameter ST_FETCH3         =       6'b000011;
-    parameter ST_PRECALC        =       6'b000100;
-    parameter ST_PRECALC2       =       6'b000101;
+    parameter ST_RESET          =       6'd1;
+    parameter ST_FETCH          =       6'd2;
+    parameter ST_FETCH2         =       6'd3;
+    parameter ST_FETCH3         =       6'd4;
+    parameter ST_PRECALC        =       6'd5;
+    parameter ST_PRECALC2       =       6'd6;
     
     // Type R
-    parameter ST_ADD            =       6'b000111;
-    parameter ST_SAVE_RESULT    =       6'b001000;
+    parameter ST_ADD            =       6'd7;
+    parameter ST_ADDI           =       6'd8;
+    parameter ST_SAVE_RESULT    =       6'd9;
     
 
 initial begin
@@ -283,6 +284,26 @@ always @(posedge clk) begin
                 COUNTER = 3'b000;
                 STATE = ST_SAVE_RESULT;
             end
+
+            ST_ADDI: begin
+                WritePC = 1'b0;
+                WriteA = 1'b0;
+                WriteB = 1'b0;
+                WriteALUOut = 1'b1;
+                WriteMem = 1'b0;
+                WriteInstruction = 1'b0;
+                WriteReg = 1'b0;
+                
+                memAddrCtrl = 3'b010;
+                ALUSrcACtrl = 2'b01;
+                ALUSrcBCtrl = 3'b011;
+                PCSrcCtrl = 2'b10;
+                WriteRegCtrl = 2'b00;
+                WriteDataCtrl = 2'b00;
+                ALUCtrl = 3'b001;
+
+                COUNTER = 3'b000;
+                STATE = ST_SAVE_RESULT;
 
             ST_SAVE_RESULT: begin
                 WritePC = 1'b0;
