@@ -164,7 +164,7 @@ module cpu(
 
 // High level components
 
-    Memoria Memory(
+    Memoria Memory_(
         memAddr,
         clk,
         WriteMem,

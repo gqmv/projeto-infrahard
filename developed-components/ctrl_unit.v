@@ -304,6 +304,7 @@ always @(posedge clk) begin
 
                 COUNTER = 3'b000;
                 STATE = ST_SAVE_RESULT;
+            end
 
             ST_SAVE_RESULT: begin
                 WritePC = 1'b0;
