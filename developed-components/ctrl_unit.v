@@ -22,15 +22,14 @@ module ctrl_unit(
     output reg WriteReg,
 
     // MUX Controllers
-    output reg [2:0] memAddrCtrl,
+    output reg [2:0] MemAddrCtrl,
     output reg [1:0] ALUSrcACtrl,
     output reg [2:0] ALUSrcBCtrl,
     output reg [1:0] PCSrcCtrl,
     output reg [1:0] WriteRegCtrl,
-    output reg [1:0] WriteDataCtrl,
+    output reg [2:0] WriteDataCtrl,
     output reg [2:0] ALUCtrl,
-
-    output reg resetOut
+    output reg reset_out
 
 );
 
@@ -79,8 +78,7 @@ module ctrl_unit(
     // States
     parameter ST_RESET          =       6'd1;
     parameter ST_FETCH          =       6'd2;
-    parameter ST_FETCH2         =       6'd3;
-    parameter ST_FETCH3         =       6'd4;
+
     parameter ST_PRECALC        =       6'd5;
     parameter ST_PRECALC2       =       6'd6;
     
@@ -91,125 +89,69 @@ module ctrl_unit(
     
 
 initial begin
-    resetOut = 1'b1;
+    reset_out = 1'b1;
 end
 
 
 always @(posedge clk) begin
     if (reset == 1'b1) begin
-        if (STATE != ST_RESET) begin
-            STATE = ST_FETCH;
+            
             WritePC = 1'b0;
             WriteA = 1'b0;
             WriteB = 1'b0;
             WriteALUOut = 1'b0;
             WriteMem = 1'b0;
             WriteInstruction = 1'b0;
-            WriteReg = 1'b1;
+            
 
-            memAddrCtrl = 3'b000;
-            ALUSrcACtrl = 2'b00;
-            ALUSrcBCtrl = 2'b00;
-            PCSrcCtrl = 2'b00;
             WriteReg = 1'b1;
             WriteRegCtrl = 2'b01;
             WriteDataCtrl = 3'b011;
-            ALUCtrl = 3'b000;
-
-            resetOut = 1'b1; //
-
-            COUNTER = 3'b000;
-        end 
-        else begin
+            
+            
+            reset_out= 1'b0; 
             STATE = ST_FETCH;
-
-            WritePC = 1'b0;
-            WriteA = 1'b0;
-            WriteB = 1'b0;
-            WriteALUOut = 1'b0;
-            WriteMem = 1'b0;
-            WriteInstruction = 1'b0;
-            WriteReg = 1'b0;
-
-            memAddrCtrl = 3'b000;
-            ALUSrcACtrl = 2'b00;
-            ALUSrcBCtrl = 2'b00;
-            PCSrcCtrl = 2'b00;
-            WriteReg = 1'b0;
-            WriteRegCtrl = 2'b000;
-            WriteDataCtrl = 3'b000;
-            ALUCtrl = 3'b000;
-
-            resetOut = 1'b0; //
-
             COUNTER = 3'b000;
-        end
-    end
-    else begin
+    end else begin
         case (STATE)
             ST_FETCH: begin
-                WritePC = 1'b0;
-                WriteA = 1'b0;
-                WriteB = 1'b0;
-                WriteALUOut = 1'b1;
-                WriteMem = 1'b0;
-                WriteInstruction = 1'b0;
-                WriteReg = 1'b0;
-                
-                memAddrCtrl = 3'b010;
-                ALUSrcACtrl = 2'b00;
-                ALUSrcBCtrl = 3'b001;
-                PCSrcCtrl = 2'b00;
-                WriteRegCtrl = 2'b00;
-                WriteDataCtrl = 2'b00;
-                ALUCtrl = 3'b001;
+                if (COUNTER == 3'b000 || COUNTER == 3'b001 || COUNTER == 3'b010) begin 
+                    WritePC = 1'b0;
+                    WriteA = 1'b0;
+                    WriteB = 1'b0;
+                    WriteMem = 1'b0;
+                    WriteInstruction = 1'b1;
+                    
+                    WriteReg = 1'b0;
+                    MemAddrCtrl = 3'b010;
+                    ALUSrcACtrl = 2'b00;
+                    ALUSrcBCtrl = 3'b001;
+                    ALUCtrl = 3'b001;
+                    WriteALUOut = 1'b1;
 
-                COUNTER = 3'b000;
-                STATE = ST_FETCH2;
+                    PCSrcCtrl = 2'b00;
+                    WriteRegCtrl = 2'b00;
+                    WriteDataCtrl = 2'b00;
+
+                    COUNTER = COUNTER + 3'b001;
+
+                end 
+                else if (COUNTER == 3'b011) begin 
+                    WriteA = 1'b0;
+                    WriteB = 1'b0;
+                    WriteALUOut = 1'b0;
+                    WriteMem = 1'b0;
+                    WriteReg = 1'b0;
+                    
+                    WriteInstruction = 1'b0;
+                    PCSrcCtrl = 2'b10;
+                    WritePC = 1'b1;
+
+                    COUNTER = 3'b000;
+                    STATE = ST_PRECALC;
+                end
             end
-
-            ST_FETCH2: begin
-                WritePC = 1'b1;
-                WriteA = 1'b0;
-                WriteB = 1'b0;
-                WriteALUOut = 1'b1;
-                WriteMem = 1'b0;
-                WriteInstruction = 1'b0;
-                WriteReg = 1'b0;
-                
-                memAddrCtrl = 3'b010;
-                ALUSrcACtrl = 2'b00;
-                ALUSrcBCtrl = 3'b001;
-                PCSrcCtrl = 2'b10;
-                WriteRegCtrl = 2'b00;
-                WriteDataCtrl = 2'b00;
-                ALUCtrl = 3'b001;
-
-                COUNTER = 3'b000;
-                STATE = ST_FETCH3;
-            end
-
-            ST_FETCH3: begin
-                WritePC = 1'b0;
-                WriteA = 1'b0;
-                WriteB = 1'b0;
-                WriteALUOut = 1'b1;
-                WriteMem = 1'b0;
-                WriteInstruction = 1'b1;
-                WriteReg = 1'b0;
-                
-                memAddrCtrl = 3'b010;
-                ALUSrcACtrl = 2'b00;
-                ALUSrcBCtrl = 3'b001;
-                PCSrcCtrl = 2'b10;
-                WriteRegCtrl = 2'b00;
-                WriteDataCtrl = 2'b00;
-                ALUCtrl = 3'b001;
-
-                COUNTER = 3'b000;
-                STATE = ST_PRECALC;
-            end
-            
+        
             ST_PRECALC: begin
                 WritePC = 1'b0;
                 WriteA = 1'b0;
@@ -219,7 +161,7 @@ always @(posedge clk) begin
                 WriteInstruction = 1'b0;
                 WriteReg = 1'b0;
                 
-                memAddrCtrl = 3'b010;
+                MemAddrCtrl = 3'b010;
                 ALUSrcACtrl = 2'b00;
                 ALUSrcBCtrl = 3'b010;
                 PCSrcCtrl = 2'b10;
@@ -240,7 +182,7 @@ always @(posedge clk) begin
                 WriteInstruction = 1'b0;
                 WriteReg = 1'b0;
                 
-                memAddrCtrl = 3'b010;
+                MemAddrCtrl = 3'b010;
                 ALUSrcACtrl = 2'b00;
                 ALUSrcBCtrl = 3'b010;
                 PCSrcCtrl = 2'b10;
@@ -248,7 +190,7 @@ always @(posedge clk) begin
                 WriteDataCtrl = 2'b00;
                 ALUCtrl = 3'b001;
 
-                COUNTER = 3'b000;
+                COUNTER = 3'b001;
                 
                 case (Instruction_31_26)
                     Op_Type_r: begin
@@ -273,7 +215,7 @@ always @(posedge clk) begin
                 WriteInstruction = 1'b0;
                 WriteReg = 1'b0;
                 
-                memAddrCtrl = 3'b010;
+                MemAddrCtrl = 3'b010;
                 ALUSrcACtrl = 2'b01;
                 ALUSrcBCtrl = 3'b000;
                 PCSrcCtrl = 2'b10;
@@ -281,7 +223,7 @@ always @(posedge clk) begin
                 WriteDataCtrl = 2'b00;
                 ALUCtrl = 3'b001;
 
-                COUNTER = 3'b000;
+                COUNTER = 3'b001;
                 STATE = ST_SAVE_RESULT;
             end
 
@@ -294,7 +236,7 @@ always @(posedge clk) begin
                 WriteInstruction = 1'b0;
                 WriteReg = 1'b0;
                 
-                memAddrCtrl = 3'b010;
+                MemAddrCtrl = 3'b010;
                 ALUSrcACtrl = 2'b01;
                 ALUSrcBCtrl = 3'b011;
                 PCSrcCtrl = 2'b10;
@@ -302,7 +244,7 @@ always @(posedge clk) begin
                 WriteDataCtrl = 2'b00;
                 ALUCtrl = 3'b001;
 
-                COUNTER = 3'b000;
+                COUNTER = 3'b010;
                 STATE = ST_SAVE_RESULT;
             end
 
@@ -315,7 +257,7 @@ always @(posedge clk) begin
                 WriteInstruction = 1'b0;
                 WriteReg = 1'b1;
                 
-                memAddrCtrl = 3'b010;
+                MemAddrCtrl = 3'b010;
                 ALUSrcACtrl = 2'b01;
                 ALUSrcBCtrl = 3'b000;
                 PCSrcCtrl = 2'b10;

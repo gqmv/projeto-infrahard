@@ -27,12 +27,12 @@ module cpu(
     wire Zero;
 
 // MUX Control Signals
-    wire [2:0] memAddrCtrl;
+    wire [2:0] MemAddrCtrl;
     wire [1:0] ALUSrcACtrl;
     wire [2:0] ALUSrcBCtrl;
     wire [1:0] PCSrcCtrl;
     wire [1:0] WriteRegCtrl;
-    wire [1:0] WriteDataCtrl;
+    wire [2:0] WriteDataCtrl;
     wire [2:0] ALUCtrl;
     
 // Data Wires (32 BITS)
@@ -50,7 +50,7 @@ module cpu(
     wire [31:0] Shift_Left_2;
     wire [31:0] Sign_Extend;
     wire [31:0] Mem_Data;
-    wire [31:0] Exception_Destiny;
+    wire [31:0] ExceptionDestiny;
     wire [31:0] EPCOut;
     wire [31:0] LO;
     wire [31:0] HI;
@@ -103,6 +103,7 @@ module cpu(
         clk,
         reset,
         WriteALUOut,
+        ALUResult,
         ALUOut
     );
 
@@ -176,7 +177,7 @@ module cpu(
         clk,
         reset,
         WriteInstruction,
-        InstructionIn,
+        MemDataOut,
         Instruction_31_26,
         Instruction_25_21,
         Instruction_20_16,
@@ -232,7 +233,7 @@ module cpu(
         WriteMem,
         WriteInstruction,
         WriteReg,
-        memAddrCtrl,
+        MemAddrCtrl,
         ALUSrcACtrl,
         ALUSrcBCtrl,
         PCSrcCtrl,
