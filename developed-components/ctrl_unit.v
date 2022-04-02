@@ -84,9 +84,40 @@ module ctrl_unit(
     
     // Type R
     parameter ST_ADD            =       6'd7;
-    parameter ST_ADDI           =       6'd8;
-    parameter ST_SAVE_RESULT    =       6'd9;
-    
+    parameter ST_AND            =       6'd8;
+    parameter ST_SUB            =       6'd9;
+    parameter ST_SAVE_RESULT    =       6'd10;
+    parameter ST_MULT           =       6'd11;
+    parameter ST_DIV            =       6'd12;
+    parameter ST_MFHI           =       6'd13;
+    parameter ST_MFLO           =       6'd14;
+    parameter ST_SLL            =       6'd15;
+    parameter ST_SRL            =       6'd16;
+    parameter ST_SRA            =       6'd17;
+    parameter ST_SLLV           =       6'd18;
+    parameter ST_SRAV           =       6'd19;
+    parameter ST_SLT            =       6'd20;
+    parameter ST_BREAK          =       6'd21;
+    parameter ST_ADDM           =       6'd22;
+    parameter ST_JR             =       6'd23;
+    parameter ST_RTE            =       6'd24;
+    parameter ST_J              =       6'd25;
+    parameter ST_JAL            =       6'd26;
+    parameter ST_SB             =       6'd27;
+    parameter ST_SH             =       6'd28;
+    parameter ST_SW             =       6'd29;
+    parameter ST_LB             =       6'd30;
+    parameter ST_LH             =       6'd31;
+    parameter ST_LW             =       6'd32;
+    parameter ST_LUI            =       6'd33;
+    parameter ST_SLTI           =       6'd34;
+    parameter ST_BGT            =       6'd35;
+    parameter ST_BLE            =       6'd36;
+    parameter ST_BEQ            =       6'd37;
+    parameter ST_BNE            =       6'd38;
+    parameter ST_ADDIU          =       6'd39;
+    parameter ST_ADDI           =       6'd40;
+    parameter ST_ADDI_ADDIU     =       6'd41;
 
 initial begin
     reset_out = 1'b1;
@@ -192,7 +223,7 @@ always @(posedge clk) begin
 
                 COUNTER = 3'b001;
                 
-                case (Instruction_31_26)
+                case (Instruction_31_26) // OPCODE
                     OP_Type_r: begin
                         case (Instruction_15_0[5:0])
 
@@ -268,74 +299,75 @@ always @(posedge clk) begin
                                 STATE = ST_OPCODE404;
                             endcase
                     end
+
                     OP_Addi: begin
                         STATE = ST_ADDI;
                     end
-                    //Op ADDIU
+                   
                     OP_Addiu: begin
                         STATE = ST_ADDIU;
                     end
-                    //Op BEQ
+                    
                     OP_Beq: begin
                         STATE = ST_BEQ;
                     end
-                    //Op BNE
+                    
                     OP_Bne: begin
                         STATE = ST_BNE;
                     end
-                    //Op BLE
+                    
                     OP_Ble: begin
                         STATE = ST_BLE;
                     end
-                    //Op BGT
+                    
                     OP_Bgt: begin
                         STATE = ST_BGT;
                     end
-                    //Op SLLM
+                    
                     OP_Sllm: begin
                         STATE = ST_SLLM;
                     end
-                    //Op LB
+                   
                     OP_Lb: begin
                         STATE = ST_LB;
                     end
-                    //Op LH
+                    
                     OP_Lh: begin
                         STATE = ST_LH;
                     end
-                    //Op LUI
+                    
                     OP_Lui: begin
                         STATE = ST_LUI;
                     end
-                    //Op LW
+                    
                     OP_Lw: begin
                         STATE = ST_LW;
                     end
-                    //Op SB
+                    
                     OP_Sb: begin
                         STATE = ST_SB;
                     end
-                    //Op SH
+                    
                     OP_Sh: begin
                         STATE = ST_SH;
                     end
-                    //Op SLTI
+                    
                     OP_Slti: begin
                         STATE = ST_SLTI;
                     end
-                    //Op SW
+                    
                     OP_Sw: begin
                         STATE = ST_SW;
                     end
-                    //Op J
+                    
                     OP_J: begin
                         STATE = ST_J;
                     end
-                    //Op JAL
+                    
                     OP_Jal: begin
                         STATE = ST_JAL;
                     end
-                    default:
+                    default: //erro de opcode
                         STATE = ST_OPCODE404;
                     endcase
                     
