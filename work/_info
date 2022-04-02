@@ -1,0 +1,537 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/19.1
+vALUAMux
+Z0 !s110 1648928639
+!i10b 1
+!s100 0=i06VY6g@O<[3FYKC1o>2
+IE`WJX74>F:kQ]IFTFAN>c2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard
+w1648755024
+8C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/ALUAMux.v
+FC:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/ALUAMux.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1648928639.000000
+!s107 C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/ALUAMux.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/ALUAMux.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+n@a@l@u@a@mux
+vALUBMux
+R0
+!i10b 1
+!s100 I<0C2MzjE61IR4Un>CSlL1
+ITW^N]BVAPV^mXeO@d]=a80
+R1
+R2
+w1648756435
+8C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/ALUBMux.v
+FC:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/ALUBMux.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/ALUBMux.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/ALUBMux.v|
+!i113 1
+R5
+R6
+n@a@l@u@b@mux
+Ebanco_reg
+Z7 w1636504841
+Z8 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z9 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z10 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R2
+Z11 8C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/given-components/Banco_reg.vhd
+Z12 FC:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/given-components/Banco_reg.vhd
+l0
+L69
+V:adHbk0Ym0TAKYW83J5Y[3
+!s100 hZ46CT_BzQl8j]02_Vf=o2
+Z13 OV;C;10.5b;63
+32
+Z14 !s110 1648928640
+!i10b 1
+Z15 !s108 1648928640.000000
+Z16 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/given-components/Banco_reg.vhd|
+Z17 !s107 C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/given-components/Banco_reg.vhd|
+!i113 1
+Z18 o-work work -2002 -explicit
+Z19 tExplicit 1 CvgOpt 0
+Abehavioral_arch
+R8
+R9
+R10
+DEx4 work 9 banco_reg 0 22 :adHbk0Ym0TAKYW83J5Y[3
+l93
+L85
+VY7l=BkTbhRVIWWGL4mMo60
+!s100 RmVnX=Z0eZ>VP`R`^LJ]Q1
+R13
+32
+R14
+!i10b 1
+R15
+R16
+R17
+!i113 1
+R18
+R19
+vcpu
+R0
+!i10b 1
+!s100 186z86f1bMDD;UGX=S2@<0
+I4OST]ldm^9iee@TaKlCmU3
+R1
+R2
+Z20 w1648920443
+8C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/cpu.v
+FC:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/cpu.v
+L0 8
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/cpu.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/cpu.v|
+!i113 1
+R5
+R6
+vctrl_unit
+!s110 1648931652
+!i10b 1
+!s100 En9JYF=Lf8QWIfM02T0MQ0
+I03f:6A7Q_dhk<dICf]dJ:2
+R1
+R2
+w1648931646
+8C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v
+FC:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1648931651.000000
+!s107 C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v|
+!i113 1
+R5
+R6
+Einstr_reg
+R20
+R9
+R10
+R2
+Z21 8C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/given-components/Instr_Reg.vhd
+Z22 FC:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/given-components/Instr_Reg.vhd
+l0
+L42
+VAfV1kYS402dnLRiFO;Z7_2
+!s100 _X]FAEHlMn?]L[?c6kUO?1
+R13
+32
+R14
+!i10b 1
+R15
+Z23 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/given-components/Instr_Reg.vhd|
+Z24 !s107 C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/given-components/Instr_Reg.vhd|
+!i113 1
+R18
+R19
+Abehavioral_arch
+R9
+R10
+DEx4 work 9 instr_reg 0 22 AfV1kYS402dnLRiFO;Z7_2
+l59
+L56
+VTD836jU:>9m^d?0ed1C0O3
+!s100 _AcjR?n;fJneQZzaIjJFa3
+R13
+32
+R14
+!i10b 1
+R15
+R23
+R24
+!i113 1
+R18
+R19
+vmemAddrMux
+!s110 1648928663
+!i10b 1
+!s100 deV7am8mZz_HdhN>Hz35B1
+I7>eAgTI_o>HP^2Y`g]NK]3
+R1
+R2
+w1648756066
+8C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/memAddrMux.v
+FC:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/memAddrMux.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1648928663.000000
+!s107 C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/memAddrMux.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/memAddrMux.v|
+!i113 1
+R5
+R6
+nmem@addr@mux
+Ememoria
+Z25 w1636588305
+Z26 DPx4 work 13 ram_constants 0 22 BbIcggj=<H_W75Jb?WIoZ0
+Z27 DPx3 lpm 14 lpm_components 0 22 kbQff^T0P6bT[7n>=YCE40
+R8
+R9
+R10
+R2
+Z28 8C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/given-components/Memoria.vhd
+Z29 FC:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/given-components/Memoria.vhd
+l0
+L67
+V<[RFRXeHV^PMOiiinkBoS0
+!s100 __XEo>II7SFLX6Xa7VZA63
+R13
+32
+R14
+!i10b 1
+R15
+Z30 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/given-components/Memoria.vhd|
+Z31 !s107 C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/given-components/Memoria.vhd|
+!i113 1
+R18
+R19
+Abehavioral_arch
+R26
+R27
+R8
+R9
+R10
+DEx4 work 7 memoria 0 22 <[RFRXeHV^PMOiiinkBoS0
+l103
+L79
+VR9W83dOfA7lWR9j>i6THA2
+!s100 aLo:Seezh^aEQ@MaJf[__3
+R13
+32
+R14
+!i10b 1
+R15
+R30
+R31
+!i113 1
+R18
+R19
+vPCSrcCtrlMux
+R14
+!i10b 1
+!s100 mb6`cXE3Cjk:Z9X6O>AiJ3
+IUeda2=JGA>[zcWc7:=bC40
+R1
+R2
+w1648755715
+8C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/PCSrcCtrlMux.v
+FC:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/PCSrcCtrlMux.v
+L0 1
+R3
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/PCSrcCtrlMux.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/PCSrcCtrlMux.v|
+!i113 1
+R5
+R6
+n@p@c@src@ctrl@mux
+Pram_constants
+R25
+R2
+R28
+R29
+l0
+L47
+VBbIcggj=<H_W75Jb?WIoZ0
+!s100 5;`Z:D@MR5CT6j_[c9;6h3
+R13
+32
+R14
+!i10b 1
+R15
+R30
+R31
+!i113 1
+R18
+R19
+Eregdesloc
+Z32 w1636588186
+R8
+R9
+R10
+R2
+Z33 8C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/given-components/RegDesloc.vhd
+Z34 FC:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/given-components/RegDesloc.vhd
+l0
+L80
+V4GibeROOKf]^CUjTE67Bo0
+!s100 =0ZG0kkZKT?Zo?iX2R9=P1
+R13
+32
+R14
+!i10b 1
+R15
+Z35 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/given-components/RegDesloc.vhd|
+Z36 !s107 C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/given-components/RegDesloc.vhd|
+!i113 1
+R18
+R19
+Abehavioral_arch
+R8
+R9
+R10
+DEx4 work 9 regdesloc 0 22 4GibeROOKf]^CUjTE67Bo0
+l98
+L93
+VDFCTADkAb^4XhT09kD<k32
+!s100 3`2HClJO^bJLd6@PodWh?3
+R13
+32
+R14
+!i10b 1
+R15
+R35
+R36
+!i113 1
+R18
+R19
+Eregistrador
+Z37 w1219103383
+R9
+R10
+R2
+Z38 8C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/given-components/Registrador.vhd
+Z39 FC:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/given-components/Registrador.vhd
+l0
+L53
+VD=`aG^VOPEDP69ifb8G;52
+!s100 ^e8=Z<CbNTLXR@XGZJMQo3
+R13
+32
+R14
+!i10b 1
+R15
+Z40 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/given-components/Registrador.vhd|
+Z41 !s107 C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/given-components/Registrador.vhd|
+!i113 1
+R18
+R19
+Abehavioral_arch
+R9
+R10
+DEx4 work 11 registrador 0 22 D=`aG^VOPEDP69ifb8G;52
+l66
+L65
+V<kVfXRZJUh40ja<<lN_3:3
+!s100 EXKKzlBL1ARAk5TCN4`Vg2
+R13
+32
+R14
+!i10b 1
+R15
+R40
+R41
+!i113 1
+R18
+R19
+vShiftNMux
+R14
+!i10b 1
+!s100 =Gja]`l_48Qi>g=CWk;052
+IPzflcUPfc2YQ4nIS>IXJX3
+R1
+R2
+w1648923936
+8C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/ShiftNMux.v
+FC:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/ShiftNMux.v
+L0 1
+R3
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/ShiftNMux.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/ShiftNMux.v|
+!i113 1
+R5
+R6
+n@shift@n@mux
+vShiftSrcMux
+R14
+!i10b 1
+!s100 a@BhQ9e>@I=ZU4<_9]N[A1
+Id?DjYX48X@j^Cf78DkUjU0
+R1
+R2
+w1648922775
+8C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/ShiftSrcMux.v
+FC:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/ShiftSrcMux.v
+L0 1
+R3
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/ShiftSrcMux.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/ShiftSrcMux.v|
+!i113 1
+R5
+R6
+n@shift@src@mux
+vSignExtend
+R0
+!i10b 1
+!s100 BZP[:M@@<Gd;`zYh`L7Zl2
+I<30GDH9ilG]9VGTAG:9AU2
+R1
+R2
+w1648828892
+8C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/SignExtend.v
+FC:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/SignExtend.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/SignExtend.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/SignExtend.v|
+!i113 1
+R5
+R6
+n@sign@extend
+vSignExtendTest
+R0
+!i10b 1
+!s100 RUL@f6ehk1[W1DA4?7>0U0
+IIV[I4zd4;FPc5HISYg1Oi2
+R1
+R2
+w1648828875
+8C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/SignExtendTest.v
+FC:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/SignExtendTest.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 developed-components/SignExtend.v|C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/SignExtendTest.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/SignExtendTest.v|
+!i113 1
+R5
+R6
+n@sign@extend@test
+Eula32
+Z42 w1636588249
+R8
+R9
+R10
+R2
+Z43 8C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/given-components/ula32.vhd
+Z44 FC:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/given-components/ula32.vhd
+l0
+L63
+VM1`EhBco;Cb9<:6CC>b?e2
+!s100 bGmbVJaTC>R`I<lBgn7@L3
+R13
+32
+Z45 !s110 1648928641
+!i10b 1
+Z46 !s108 1648928641.000000
+Z47 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/given-components/ula32.vhd|
+Z48 !s107 C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/given-components/ula32.vhd|
+!i113 1
+R18
+R19
+Abehavioral
+R8
+R9
+R10
+DEx4 work 5 ula32 0 22 M1`EhBco;Cb9<:6CC>b?e2
+l89
+L79
+VF94M;2UJ^55hCen3Z[Kfk0
+!s100 1E>E2KjDKb=5dkES8U2ha0
+R13
+32
+R45
+!i10b 1
+R46
+R47
+R48
+!i113 1
+R18
+R19
+vWriteDataMux
+R14
+!i10b 1
+!s100 lQnZP`;?na95F@SF2dzho3
+IoBbZLFJa2bn_SJ90IcH4a1
+R1
+R2
+w1648758733
+8C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/WriteDataMux.v
+FC:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/WriteDataMux.v
+L0 1
+R3
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/WriteDataMux.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/WriteDataMux.v|
+!i113 1
+R5
+R6
+n@write@data@mux
+vWriteRegMux
+R0
+!i10b 1
+!s100 OW<Gm?bb`NQ0oIahLENZI2
+Ib[`I^Z9jdzPW_K:z[J5Le2
+R1
+R2
+w1648764876
+8C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/WriteRegMux.v
+FC:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/WriteRegMux.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/WriteRegMux.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/mux/WriteRegMux.v|
+!i113 1
+R5
+R6
+n@write@reg@mux

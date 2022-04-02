@@ -118,6 +118,10 @@ module ctrl_unit(
     parameter ST_ADDIU          =       6'd39;
     parameter ST_ADDI           =       6'd40;
     parameter ST_ADDI_ADDIU     =       6'd41;
+    parameter ST_SLLM           =       6'd42;
+
+    parameter ST_OPCODE404      =       6'd43;
+    parameter ST_OVERFLOW       =       6'd44;
 
 initial begin
     reset_out = 1'b1;
@@ -221,7 +225,7 @@ always @(posedge clk) begin
                 WriteDataCtrl = 2'b00;
                 ALUCtrl = 3'b001;
 
-                COUNTER = 3'b001;
+                COUNTER = 3'b000;
                 
                 case (Instruction_31_26) // OPCODE
                     OP_Type_r: begin
@@ -287,7 +291,7 @@ always @(posedge clk) begin
                             Funct_Break: begin
                                 STATE = ST_BREAK;
                             end
-                            /
+                            
                             Funct_RTE: begin
                                 STATE = ST_RTE;
                             end
@@ -367,10 +371,10 @@ always @(posedge clk) begin
                     OP_Jal: begin
                         STATE = ST_JAL;
                     end
-                    default: //erro de opcode
+                    default: begin//erro de opcode
                         STATE = ST_OPCODE404;
-                    endcase
-                    
+                    end
+                
                 endcase
 
             end
@@ -393,7 +397,7 @@ always @(posedge clk) begin
                 WriteDataCtrl = 2'b00;
                 ALUCtrl = 3'b001;
 
-                COUNTER = 3'b001;
+                COUNTER = 3'b000;
                 STATE = ST_SAVE_RESULT;
             end
 
@@ -415,14 +419,41 @@ always @(posedge clk) begin
                 ALUCtrl = 3'b001;
 
                 COUNTER = 3'b010;
-                STATE = ST_SAVE_RESULT;
+
+                if(Overflow) begin
+                    STATE = ST_OVERFLOW;
+                end
+                else begin
+                    STATE = ST_ADDI_ADDIU;
+                end
+            end
+
+            ST_ADDI_ADDIU: begin
+                WritePC = 1'b0;
+                WriteA = 1'b0;
+                WriteB = 1'b0;
+                WriteALUOut = 1'b0;
+                WriteMem = 1'b0;
+                WriteInstruction = 1'b0;
+                WriteReg = 1'b1;
+                
+                MemAddrCtrl = 3'b010;
+                ALUSrcACtrl = 2'b01;
+                ALUSrcBCtrl = 3'b000;
+                PCSrcCtrl = 2'b10;
+                WriteRegCtrl = 3'b011;
+                WriteDataCtrl = 3'b000;
+                ALUCtrl = 3'b001;
+
+                COUNTER = 3'b000;
+                STATE = ST_FETCH;  
             end
 
             ST_SAVE_RESULT: begin
                 WritePC = 1'b0;
                 WriteA = 1'b0;
                 WriteB = 1'b0;
-                WriteALUOut = 1'b1;
+                WriteALUOut = 1'b0;
                 WriteMem = 1'b0;
                 WriteInstruction = 1'b0;
                 WriteReg = 1'b1;
@@ -436,8 +467,77 @@ always @(posedge clk) begin
                 ALUCtrl = 3'b001;
 
                 COUNTER = 3'b000;
-                STATE = ST_FETCH;         // mudar para estado onde tudo é resetado
+
+                if (Overflow) begin
+                    STATE = ST_OVERFLOW;
+                end else begin
+                    STATE = ST_FETCH;
+                end       // mudar para estado onde tudo é resetado
             end
+
+            ST_AND: begin
+                WritePC = 1'b0;
+                WriteA = 1'b0;
+                WriteB = 1'b0;
+                WriteALUOut = 1'b1;
+                WriteMem = 1'b0;
+                WriteInstruction = 1'b0;
+                WriteReg = 1'b0;
+                
+                MemAddrCtrl = 3'b010;
+                ALUSrcACtrl = 2'b01;
+                ALUSrcBCtrl = 3'b000;
+                PCSrcCtrl = 2'b10;
+                WriteRegCtrl = 2'b00;
+                WriteDataCtrl = 2'b00;
+                ALUCtrl = 3'b011;
+
+                COUNTER = 3'b000;
+                STATE = ST_SAVE_RESULT;
+            end
+
+            ST_SUB: begin
+                WritePC = 1'b0;
+                WriteA = 1'b0;
+                WriteB = 1'b0;
+                WriteALUOut = 1'b1;
+                WriteMem = 1'b0;
+                WriteInstruction = 1'b0;
+                WriteReg = 1'b0;
+                
+                MemAddrCtrl = 3'b010;
+                ALUSrcACtrl = 2'b01;
+                ALUSrcBCtrl = 3'b000;
+                PCSrcCtrl = 2'b10;
+                WriteRegCtrl = 2'b00;
+                WriteDataCtrl = 2'b00;
+                ALUCtrl = 3'b010;
+
+                COUNTER = 3'b000;
+                STATE = ST_SAVE_RESULT;
+            end
+
+            ST_ADDIU: begin
+                WritePC = 1'b0;
+                WriteA = 1'b0;
+                WriteB = 1'b0;
+                WriteALUOut = 1'b1;
+                WriteMem = 1'b0;
+                WriteInstruction = 1'b0;
+                WriteReg = 1'b0;
+                
+                MemAddrCtrl = 3'b010;
+                ALUSrcACtrl = 2'b01;
+                ALUSrcBCtrl = 3'b011;
+                PCSrcCtrl = 2'b10;
+                WriteRegCtrl = 2'b00;
+                WriteDataCtrl = 2'b00;
+                ALUCtrl = 3'b001;
+
+                COUNTER = 3'b010;
+                STATE = ST_ADDI_ADDIU;
+            end
+
         endcase
     end
 end
