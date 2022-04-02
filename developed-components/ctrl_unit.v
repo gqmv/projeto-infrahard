@@ -37,24 +37,24 @@ module ctrl_unit(
     reg [2:0] COUNTER;
     
     // parameters OPCODE
-    parameter Op_Type_r         =       6'b000000;
-    parameter Op_Addi           =       6'b001000;
-    parameter Op_Addiu          =       6'b001001;
-    parameter Op_Beq            =       6'b000100;
-    parameter Op_Bne            =       6'b000101;
-    parameter Op_Ble            =       6'b000110;
-    parameter Op_Bgt            =       6'b000111;
-    parameter Op_Sllm           =       6'b000001;
-    parameter Op_Lb             =       6'b100000;
-    parameter Op_Lh             =       6'b100001;
-    parameter Op_Lui            =       6'b001111;
-    parameter Op_Lw             =       6'b100011;
-    parameter Op_Sb             =       6'b101000;
-    parameter Op_Sh             =       6'b101001;
-    parameter Op_Slti           =       6'b001010; 
-    parameter Op_Sw             =       6'b101011;
-    parameter Op_J              =       6'b000010;
-    parameter Op_Jal            =       6'b000011;
+    parameter OP_Type_r         =       6'b000000;
+    parameter OP_Addi           =       6'b001000;
+    parameter OP_Addiu          =       6'b001001;
+    parameter OP_Beq            =       6'b000100;
+    parameter OP_Bne            =       6'b000101;
+    parameter OP_Ble            =       6'b000110;
+    parameter OP_Bgt            =       6'b000111;
+    parameter OP_Sllm           =       6'b000001;
+    parameter OP_Lb             =       6'b100000;
+    parameter OP_Lh             =       6'b100001;
+    parameter OP_Lui            =       6'b001111;
+    parameter OP_Lw             =       6'b100011;
+    parameter OP_Sb             =       6'b101000;
+    parameter OP_Sh             =       6'b101001;
+    parameter OP_Slti           =       6'b001010; 
+    parameter OP_Sw             =       6'b101011;
+    parameter OP_J              =       6'b000010;
+    parameter OP_Jal            =       6'b000011;
 
     // parameters funct
     parameter Funct_Add         =       6'b100000;
@@ -75,7 +75,7 @@ module ctrl_unit(
     parameter Funct_RTE         =       6'b010011;
     parameter Funct_Addm        =       6'b000101;
     
-    // States
+    // STATE
     parameter ST_RESET          =       6'd1;
     parameter ST_FETCH          =       6'd2;
 
@@ -193,13 +193,151 @@ always @(posedge clk) begin
                 COUNTER = 3'b001;
                 
                 case (Instruction_31_26)
-                    Op_Type_r: begin
+                    OP_Type_r: begin
                         case (Instruction_15_0[5:0])
+
                             Funct_Add: begin
                                 STATE = ST_ADD;
                             end
-                        endcase
+
+                            Funct_And: begin
+                                STATE = ST_AND;
+                            end
+                            
+                            Funct_Div: begin
+                                STATE = ST_DIV;
+                            end
+                           
+                            Funct_Mult: begin
+                                STATE = ST_MULT;
+                            end
+                            
+                            Funct_Jr: begin
+                                STATE = ST_JR;
+                            end
+                            
+                            Funct_Mfhi: begin
+                                STATE = ST_MFHI;
+                            end
+                            
+                            Funct_Mflo: begin
+                                STATE = ST_MFLO;
+                            end
+                            
+                            Funct_Sll: begin
+                                STATE = ST_SLL;
+                            end
+                            
+                            
+                            Funct_Sllv: begin
+                                STATE = ST_SLLV;
+                            end
+                            
+                            Funct_Slt: begin
+                                STATE = ST_SLT;
+                            end
+                            
+                            Funct_Sra: begin
+                                STATE = ST_SRA;
+                            end
+                            
+                            Funct_Srav: begin
+                                STATE = ST_SRAV;
+                            end
+                            
+                            Funct_Srl: begin
+                                STATE = ST_SRL;
+                            end
+
+                            Funct_Sub: begin
+                                STATE = ST_SUB;
+                            end
+                            
+                            Funct_Break: begin
+                                STATE = ST_BREAK;
+                            end
+                            /
+                            Funct_RTE: begin
+                                STATE = ST_RTE;
+                            end
+
+                            Funct_Addm: begin
+                                STATE = ST_ADDM;
+                            end
+                            default: //erro de opcode
+                                STATE = ST_OPCODE404;
+                            endcase
                     end
+                    OP_Addi: begin
+                        STATE = ST_ADDI;
+                    end
+                    //Op ADDIU
+                    OP_Addiu: begin
+                        STATE = ST_ADDIU;
+                    end
+                    //Op BEQ
+                    OP_Beq: begin
+                        STATE = ST_BEQ;
+                    end
+                    //Op BNE
+                    OP_Bne: begin
+                        STATE = ST_BNE;
+                    end
+                    //Op BLE
+                    OP_Ble: begin
+                        STATE = ST_BLE;
+                    end
+                    //Op BGT
+                    OP_Bgt: begin
+                        STATE = ST_BGT;
+                    end
+                    //Op SLLM
+                    OP_Sllm: begin
+                        STATE = ST_SLLM;
+                    end
+                    //Op LB
+                    OP_Lb: begin
+                        STATE = ST_LB;
+                    end
+                    //Op LH
+                    OP_Lh: begin
+                        STATE = ST_LH;
+                    end
+                    //Op LUI
+                    OP_Lui: begin
+                        STATE = ST_LUI;
+                    end
+                    //Op LW
+                    OP_Lw: begin
+                        STATE = ST_LW;
+                    end
+                    //Op SB
+                    OP_Sb: begin
+                        STATE = ST_SB;
+                    end
+                    //Op SH
+                    OP_Sh: begin
+                        STATE = ST_SH;
+                    end
+                    //Op SLTI
+                    OP_Slti: begin
+                        STATE = ST_SLTI;
+                    end
+                    //Op SW
+                    OP_Sw: begin
+                        STATE = ST_SW;
+                    end
+                    //Op J
+                    OP_J: begin
+                        STATE = ST_J;
+                    end
+                    //Op JAL
+                    OP_Jal: begin
+                        STATE = ST_JAL;
+                    end
+                    default:
+                        STATE = ST_OPCODE404;
+                    endcase
                     
                 endcase
 
