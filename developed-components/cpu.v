@@ -34,6 +34,7 @@ module cpu(
     wire [1:0] WriteRegCtrl;
     wire [2:0] WriteDataCtrl;
     wire [2:0] ALUCtrl;
+    wire [1:0] ShiftRegCtrl;
     
 // Data Wires (32 BITS)
     wire [31:0] PCSrc;
@@ -63,9 +64,11 @@ module cpu(
     wire [31:0] InstructionIn;
     wire [31:0] ALUResult;
     wire [31:0] WriteData;
+    wire [31:0] ShiftRegIn;
 
 // Data Wires (Less than 32 BITS)
     wire [4:0] WriteRegOut;
+    wire [4:0] ShiftN;
 
 // Instructions
     wire [5:0] Instruction_31_26; // OPCODE
@@ -163,6 +166,14 @@ module cpu(
         WriteData
     );
 
+    ShiftNMux ShiftN_mux(
+        ShiftNCrtl,
+        B,
+        Mem_Data,
+        Instruction_15_0,
+        ShiftRegN
+    );
+
 // High level components
 
     Memoria Memory_(
@@ -207,6 +218,15 @@ module cpu(
         Equals,
         GT,
         LT
+    );
+
+    RegDesloc ShiftReg(
+        clk,
+        reset,
+        ShiftCtrl,
+        ShiftN,
+        ShiftRegIn,
+        ShiftRegOut
     );
 
 // Signal Extenders
