@@ -20,6 +20,9 @@ module ctrl_unit(
     output reg WriteMem,
     output reg WriteInstruction,
     output reg WriteReg,
+    output reg ShiftSrcCtrl,
+    output reg ShiftNCtrl,
+    output reg ShiftCtrl,
 
     // MUX Controllers
     output reg [2:0] MemAddrCtrl,
@@ -142,6 +145,9 @@ always @(posedge clk) begin
             WriteReg = 1'b1;
             WriteRegCtrl = 2'b01;
             WriteDataCtrl = 3'b011;
+            ShiftNCtrl = 1'b0;
+            ShiftCtrl = 1'b0;
+            ShiftSrcCtrl = 1'b0;
             
             
             reset_out= 1'b0; 
@@ -163,6 +169,9 @@ always @(posedge clk) begin
                     ALUSrcBCtrl = 3'b001;
                     ALUCtrl = 3'b001;
                     WriteALUOut = 1'b1;
+                    ShiftNCtrl = 1'b0;
+                    ShiftCtrl = 1'b0;
+                    ShiftSrcCtrl = 1'b0;
 
                     PCSrcCtrl = 2'b00;
                     WriteRegCtrl = 2'b00;
@@ -181,6 +190,9 @@ always @(posedge clk) begin
                     WriteInstruction = 1'b0;
                     PCSrcCtrl = 2'b10;
                     WritePC = 1'b1;
+                    ShiftNCtrl = 1'b0;
+                    ShiftCtrl = 1'b0;
+                    ShiftSrcCtrl = 1'b0;
 
                     COUNTER = 3'b000;
                     STATE = ST_PRECALC;
@@ -203,6 +215,9 @@ always @(posedge clk) begin
                 WriteRegCtrl = 2'b00;
                 WriteDataCtrl = 2'b00;
                 ALUCtrl = 3'b001;
+                ShiftNCtrl = 1'b0;
+                ShiftCtrl = 1'b0;
+                ShiftSrcCtrl = 1'b0;
 
                 COUNTER = 3'b000;
                 STATE = ST_PRECALC2;
@@ -224,6 +239,9 @@ always @(posedge clk) begin
                 WriteRegCtrl = 2'b00;
                 WriteDataCtrl = 2'b00;
                 ALUCtrl = 3'b001;
+                ShiftNCtrl = 1'b0;
+                ShiftCtrl = 1'b0;
+                ShiftSrcCtrl = 1'b0;
 
                 COUNTER = 3'b000;
                 
@@ -396,6 +414,9 @@ always @(posedge clk) begin
                 WriteRegCtrl = 2'b00;
                 WriteDataCtrl = 2'b00;
                 ALUCtrl = 3'b001;
+                ShiftNCtrl = 1'b0;
+                ShiftCtrl = 1'b0;
+                ShiftSrcCtrl = 1'b0;
 
                 COUNTER = 3'b000;
                 STATE = ST_SAVE_RESULT;
@@ -417,6 +438,9 @@ always @(posedge clk) begin
                 WriteRegCtrl = 2'b00;
                 WriteDataCtrl = 2'b00;
                 ALUCtrl = 3'b001;
+                ShiftNCtrl = 1'b0;
+                ShiftCtrl = 1'b0;
+                ShiftSrcCtrl = 1'b0;
 
                 COUNTER = 3'b010;
 
@@ -444,6 +468,9 @@ always @(posedge clk) begin
                 WriteRegCtrl = 3'b011;
                 WriteDataCtrl = 3'b000;
                 ALUCtrl = 3'b001;
+                ShiftNCtrl = 1'b0;
+                ShiftCtrl = 1'b0;
+                ShiftSrcCtrl = 1'b0;
 
                 COUNTER = 3'b000;
                 STATE = ST_FETCH;  
@@ -465,6 +492,9 @@ always @(posedge clk) begin
                 WriteRegCtrl = 3'b000;
                 WriteDataCtrl = 3'b000;
                 ALUCtrl = 3'b001;
+                ShiftNCtrl = 1'b0;
+                ShiftCtrl = 1'b0;
+                ShiftSrcCtrl = 1'b0;
 
                 COUNTER = 3'b000;
 
@@ -491,6 +521,9 @@ always @(posedge clk) begin
                 WriteRegCtrl = 2'b00;
                 WriteDataCtrl = 2'b00;
                 ALUCtrl = 3'b011;
+                ShiftNCtrl = 1'b0;
+                ShiftCtrl = 1'b0;
+                ShiftSrcCtrl = 1'b0;
 
                 COUNTER = 3'b000;
                 STATE = ST_SAVE_RESULT;
@@ -512,6 +545,9 @@ always @(posedge clk) begin
                 WriteRegCtrl = 2'b00;
                 WriteDataCtrl = 2'b00;
                 ALUCtrl = 3'b010;
+                ShiftNCtrl = 1'b0;
+                ShiftCtrl = 1'b0;
+                ShiftSrcCtrl = 1'b0;
 
                 COUNTER = 3'b000;
                 STATE = ST_SAVE_RESULT;
@@ -533,11 +569,81 @@ always @(posedge clk) begin
                 WriteRegCtrl = 2'b00;
                 WriteDataCtrl = 2'b00;
                 ALUCtrl = 3'b001;
+                ShiftNCtrl = 1'b0;
+                ShiftCtrl = 1'b0;
+                ShiftSrcCtrl = 1'b0;
 
                 COUNTER = 3'b010;
                 STATE = ST_ADDI_ADDIU;
             end
 
+            ST_SLL: begin
+                if (COUNTER == 3'b000) begin
+                    WritePC = 1'b0;
+                    WriteA = 1'b0;
+                    WriteB = 1'b0;
+                    WriteALUOut = 1'b0;
+                    WriteMem = 1'b0;
+                    WriteInstruction = 1'b0;
+                    WriteReg = 1'b0;
+
+                    MemAddrCtrl = 3'b010;
+                    ALUSrcACtrl = 2'b01;
+                    ALUSrcBCtrl = 3'b000;
+                    PCSrcCtrl = 2'b10;
+                    WriteRegCtrl = 2'b00;
+                    WriteDataCtrl = 2'b00;
+                    ALUCtrl = 3'b100;
+                    ShiftNCtrl = 2'b10;
+                    ShiftCtrl = 3'b001;
+                    ShiftSrcCtrl = 1'b0;
+
+                    COUNTER = 3'b001;
+                end else if (COUNTER == 3'b001) begin
+                    WritePC = 1'b0;
+                    WriteA = 1'b0;
+                    WriteB = 1'b0;
+                    WriteALUOut = 1'b0;
+                    WriteMem = 1'b0;
+                    WriteInstruction = 1'b0;
+                    WriteReg = 1'b0;
+
+                    MemAddrCtrl = 3'b010;
+                    ALUSrcACtrl = 2'b01;
+                    ALUSrcBCtrl = 3'b000;
+                    PCSrcCtrl = 2'b10;
+                    WriteRegCtrl = 2'b00;
+                    WriteDataCtrl = 2'b00;
+                    ALUCtrl = 3'b100;
+                    ShiftNCtrl = 2'b10;
+                    ShiftCtrl = 3'b010;
+                    ShiftSrcCtrl = 1'b0;
+
+                    COUNTER = 3'b010;
+                end else if (COUNTER == 3'b010) begin
+                    WritePC = 1'b0;
+                    WriteA = 1'b0;
+                    WriteB = 1'b0;
+                    WriteALUOut = 1'b0;
+                    WriteMem = 1'b0;
+                    WriteInstruction = 1'b0;
+                    WriteReg = 1'b1;
+
+                    MemAddrCtrl = 3'b010;
+                    ALUSrcACtrl = 2'b01;
+                    ALUSrcBCtrl = 3'b000;
+                    PCSrcCtrl = 2'b10;
+                    WriteRegCtrl = 2'b00;
+                    WriteDataCtrl = 3'b110;
+                    ALUCtrl = 3'b100;
+                    ShiftNCtrl = 2'b10;
+                    ShiftCtrl = 3'b010;
+                    ShiftSrcCtrl = 1'b0;
+
+                    COUNTER = 3'b000;
+                    STATE = ST_FETCH;
+                end
+            end
         endcase
     end
 end

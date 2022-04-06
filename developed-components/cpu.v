@@ -18,6 +18,7 @@ module cpu(
     wire WriteMem;
     wire WriteInstruction;
     wire WriteReg;
+    wire [2:0] ShiftCtrl;
 
 // ALU Flags
     wire Overflow;
@@ -34,7 +35,8 @@ module cpu(
     wire [1:0] WriteRegCtrl;
     wire [2:0] WriteDataCtrl;
     wire [2:0] ALUCtrl;
-    wire [1:0] ShiftRegCtrl;
+    wire [1:0] ShiftNCtrl;
+    wire ShiftSrcCrtl;
     
 // Data Wires (32 BITS)
     wire [31:0] PCSrc;
@@ -68,7 +70,8 @@ module cpu(
 
 // Data Wires (Less than 32 BITS)
     wire [4:0] WriteRegOut;
-    wire [4:0] ShiftN;
+    wire [4:0] ShiftRegN;
+
 
 // Instructions
     wire [5:0] Instruction_31_26; // OPCODE
@@ -167,11 +170,18 @@ module cpu(
     );
 
     ShiftNMux ShiftN_mux(
-        ShiftNCrtl,
+        ShiftNCtrl,
         B,
         Mem_Data,
         Instruction_15_0,
         ShiftRegN
+    );
+
+    ShiftSrcMux ShiftSrc_mux(
+        ShiftSrcCtrl,
+        B,
+        A,
+        ShiftRegIn
     );
 
 // High level components
@@ -224,7 +234,7 @@ module cpu(
         clk,
         reset,
         ShiftCtrl,
-        ShiftN,
+        ShiftRegN,
         ShiftRegIn,
         ShiftRegOut
     );
@@ -253,6 +263,9 @@ module cpu(
         WriteMem,
         WriteInstruction,
         WriteReg,
+        ShiftSrcCrtl,
+        ShiftNCtrl,
+        ShiftCtrl,
         MemAddrCtrl,
         ALUSrcACtrl,
         ALUSrcBCtrl,
@@ -260,7 +273,7 @@ module cpu(
         WriteRegCtrl,
         WriteDataCtrl,
         ALUCtrl,
-        reset
+        reset    
     );
 
 endmodule
