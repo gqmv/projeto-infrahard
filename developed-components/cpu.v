@@ -36,7 +36,7 @@ module cpu(
     wire [2:0] WriteDataCtrl;
     wire [2:0] ALUCtrl;
     wire [1:0] ShiftNCtrl;
-    wire ShiftSrcCrtl;
+    wire ShiftSrcCtrl;
     
 // Data Wires (32 BITS)
     wire [31:0] PCSrc;
@@ -263,7 +263,7 @@ module cpu(
         WriteMem,
         WriteInstruction,
         WriteReg,
-        ShiftSrcCrtl,
+        ShiftSrcCtrl,
         ShiftNCtrl,
         ShiftCtrl,
         MemAddrCtrl,

@@ -1,0 +1,1329 @@
+# Compile of ula32.vhd was successful.
+# Compile of Banco_reg.vhd was successful.
+# Compile of Instr_Reg.vhd was successful.
+# Compile of Memoria.vhd was successful.
+# Compile of RegDesloc.vhd was successful.
+# Compile of Registrador.vhd was successful.
+# Compile of cpu.v was successful.
+# Compile of ctrl_unit.v was successful.
+# Compile of SignExtend.v was successful.
+# Compile of WriteRegMux.v was successful.
+# Compile of ALUAMux.v was successful.
+# Compile of ALUBMux.v was successful.
+# Compile of memAddrMux.v was successful.
+# Compile of PCSrcCtrlMux.v was successful.
+# Compile of ShiftNMux.v was successful.
+# Compile of ShiftSrcMux.v was successful.
+# Compile of WriteDataMux.v was successful.
+# 17 compiles, 0 failed with no errors.
+# Compile of ula32.vhd was successful.
+# Compile of Banco_reg.vhd was successful.
+# Compile of Instr_Reg.vhd was successful.
+# Compile of Memoria.vhd was successful.
+# Compile of RegDesloc.vhd was successful.
+# Compile of Registrador.vhd was successful.
+# Compile of cpu.v was successful.
+# Compile of ctrl_unit.v was successful.
+# Compile of SignExtend.v was successful.
+# Compile of WriteRegMux.v was successful.
+# Compile of ALUAMux.v was successful.
+# Compile of ALUBMux.v was successful.
+# Compile of memAddrMux.v was successful.
+# Compile of PCSrcCtrlMux.v was successful.
+# Compile of ShiftNMux.v was successful.
+# Compile of ShiftSrcMux.v was successful.
+# Compile of WriteDataMux.v was successful.
+# 17 compiles, 0 failed with no errors.
+# Compile of ula32.vhd was successful.
+# Compile of Banco_reg.vhd was successful.
+# Compile of Instr_Reg.vhd was successful.
+# Compile of Memoria.vhd was successful.
+# Compile of RegDesloc.vhd was successful.
+# Compile of Registrador.vhd was successful.
+# Compile of cpu.v was successful.
+# Compile of ctrl_unit.v was successful.
+# Compile of SignExtend.v was successful.
+# Compile of WriteRegMux.v was successful.
+# Compile of ALUAMux.v was successful.
+# Compile of ALUBMux.v was successful.
+# Compile of memAddrMux.v was successful.
+# Compile of PCSrcCtrlMux.v was successful.
+# Compile of ShiftNMux.v was successful.
+# Compile of ShiftSrcMux.v was successful.
+# Compile of WriteDataMux.v was successful.
+# 17 compiles, 0 failed with no errors.
+vsim -gui work.cpu
+# vsim -gui work.cpu 
+# Start time: 18:03:39 on Apr 06,2022
+# Loading work.cpu
+# Loading work.memAddrMux
+# Loading work.ALUAMux
+# Loading work.ALUBMux
+# Loading work.PCSrcCtrlMux
+# Loading work.WriteRegMux
+# Loading work.WriteDataMux
+# Loading work.ShiftNMux
+# Loading work.ShiftSrcMux
+# Loading work.SignExtend
+# Loading work.ctrl_unit
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.registrador(behavioral_arch)
+# Loading ieee.numeric_std(body)
+# Loading lpm.lpm_components
+# Loading work.ram_constants
+# Loading work.memoria(behavioral_arch)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading lpm.lpm_common_conversion(body)
+# Loading lpm.lpm_device_families(body)
+# Loading lpm.lpm_ram_dq(lpm_syn)
+# Loading work.instr_reg(behavioral_arch)
+# Loading work.banco_reg(behavioral_arch)
+# Loading work.ula32(behavioral)
+# Loading work.regdesloc(behavioral_arch)
+# ** Warning: (vsim-3015) C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/cpu.v(249): [PCDPC] - Port size (1) does not match connection size (2) for port 'ShiftNCtrl'. The port definition is at: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v(24).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/CTRL File: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v
+# ** Warning: (vsim-3015) C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/cpu.v(249): [PCDPC] - Port size (1) does not match connection size (3) for port 'ShiftCtrl'. The port definition is at: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v(25).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/CTRL File: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v
+add wave -position end  sim:/cpu/clk
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gabri  Hostname: DESKTOP-HN1LS9B  ProcessID: 15232
+#           Attempting to use alternate WLF file "./wlftir0fak".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftir0fak
+add wave -position end  sim:/cpu/reset
+add wave -position end  sim:/cpu/CTRL/STATE
+add wave -position end  sim:/cpu/Registers/Cluster(25)
+add wave -position end  sim:/cpu/Registers/Cluster(24)
+force -freeze sim:/cpu/clk 1 0, 0 {50 ps} -r 100
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Registers
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Registers
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/cpu/reset 1 0
+run
+noforce sim:/cpu/reset
+noforce sim:/cpu/reset
+force -freeze sim:/cpu/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart -f
+# ** Warning: (vsim-3015) C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/cpu.v(249): [PCDPC] - Port size (1) does not match connection size (2) for port 'ShiftNCtrl'. The port definition is at: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v(24).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/CTRL File: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v
+# ** Warning: (vsim-3015) C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/cpu.v(249): [PCDPC] - Port size (1) does not match connection size (3) for port 'ShiftCtrl'. The port definition is at: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v(25).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/CTRL File: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v
+force -freeze sim:/cpu/clk 1 0, 0 {50 ps} -r 100
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Registers
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Registers
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart -f
+# ** Warning: (vsim-3015) C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/cpu.v(249): [PCDPC] - Port size (1) does not match connection size (2) for port 'ShiftNCtrl'. The port definition is at: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v(24).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/CTRL File: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v
+# ** Warning: (vsim-3015) C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/cpu.v(249): [PCDPC] - Port size (1) does not match connection size (3) for port 'ShiftCtrl'. The port definition is at: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v(25).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/CTRL File: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v
+quit -sim
+# Load canceled
+# End time: 18:23:07 on Apr 06,2022, Elapsed time: 0:19:28
+# Errors: 23, Warnings: 36
+# Compile of ctrl_unit.v failed with 4 errors.
+# Compile of ctrl_unit.v was successful.
+vsim -gui work.cpu
+# vsim -gui work.cpu 
+# Start time: 18:28:10 on Apr 06,2022
+# Loading work.cpu
+# Loading work.memAddrMux
+# Loading work.ALUAMux
+# Loading work.ALUBMux
+# Loading work.PCSrcCtrlMux
+# Loading work.WriteRegMux
+# Loading work.WriteDataMux
+# Loading work.ShiftNMux
+# Loading work.ShiftSrcMux
+# Loading work.SignExtend
+# Loading work.ctrl_unit
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.registrador(behavioral_arch)
+# Loading ieee.numeric_std(body)
+# Loading lpm.lpm_components
+# Loading work.ram_constants
+# Loading work.memoria(behavioral_arch)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading lpm.lpm_common_conversion(body)
+# Loading lpm.lpm_device_families(body)
+# Loading lpm.lpm_ram_dq(lpm_syn)
+# Loading work.instr_reg(behavioral_arch)
+# Loading work.banco_reg(behavioral_arch)
+# Loading work.ula32(behavioral)
+# Loading work.regdesloc(behavioral_arch)
+# ** Warning: (vsim-3015) C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/cpu.v(249): [PCDPC] - Port size (1) does not match connection size (2) for port 'ShiftNCtrl'. The port definition is at: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v(24).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/CTRL File: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v
+# ** Warning: (vsim-3015) C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/cpu.v(249): [PCDPC] - Port size (1) does not match connection size (3) for port 'ShiftCtrl'. The port definition is at: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v(25).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/CTRL File: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v
+add wave -position end  sim:/cpu/clk
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gabri  Hostname: DESKTOP-HN1LS9B  ProcessID: 15232
+#           Attempting to use alternate WLF file "./wlftf8vf1f".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftf8vf1f
+add wave -position end  sim:/cpu/reset
+add wave -position end  sim:/cpu/CTRL/STATE
+add wave -position end  sim:/cpu/ShiftReg/N
+add wave -position end  sim:/cpu/ShiftReg/Entrada
+add wave -position end  sim:/cpu/ShiftReg/Shift
+add wave -position end  sim:/cpu/ShiftReg/n_shift
+add wave -position end  sim:/cpu/Registers/Cluster(25)
+force -freeze sim:/cpu/clk 1 0, 0 {50 ps} -r 100
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Registers
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Registers
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+run
+run
+run
+run
+run
+run
+run
+run -all
+# Break key hit
+# Simulation stop requested.
+restart -f
+# ** Warning: (vsim-3015) C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/cpu.v(249): [PCDPC] - Port size (1) does not match connection size (2) for port 'ShiftNCtrl'. The port definition is at: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v(24).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/CTRL File: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v
+# ** Warning: (vsim-3015) C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/cpu.v(249): [PCDPC] - Port size (1) does not match connection size (3) for port 'ShiftCtrl'. The port definition is at: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v(25).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/CTRL File: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v
+restart -f
+# ** Warning: (vsim-3015) C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/cpu.v(249): [PCDPC] - Port size (1) does not match connection size (2) for port 'ShiftNCtrl'. The port definition is at: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v(24).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/CTRL File: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v
+# ** Warning: (vsim-3015) C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/cpu.v(249): [PCDPC] - Port size (1) does not match connection size (3) for port 'ShiftCtrl'. The port definition is at: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v(25).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/CTRL File: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v
+restart -f
+# ** Warning: (vsim-3015) C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/cpu.v(249): [PCDPC] - Port size (1) does not match connection size (2) for port 'ShiftNCtrl'. The port definition is at: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v(24).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/CTRL File: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v
+# ** Warning: (vsim-3015) C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/cpu.v(249): [PCDPC] - Port size (1) does not match connection size (3) for port 'ShiftCtrl'. The port definition is at: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v(25).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/CTRL File: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v
+force -freeze sim:/cpu/clk 1 0, 0 {50 ps} -r 100
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Registers
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Registers
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of ula32.vhd was successful.
+# Compile of Banco_reg.vhd was successful.
+# Compile of Instr_Reg.vhd was successful.
+# Compile of Memoria.vhd was successful.
+# Compile of RegDesloc.vhd was successful.
+# Compile of Registrador.vhd was successful.
+# Compile of cpu.v was successful.
+# Compile of ctrl_unit.v was successful.
+# Compile of SignExtend.v was successful.
+# Compile of WriteRegMux.v was successful.
+# Compile of ALUAMux.v was successful.
+# Compile of ALUBMux.v was successful.
+# Compile of memAddrMux.v was successful.
+# Compile of PCSrcCtrlMux.v was successful.
+# Compile of ShiftNMux.v was successful.
+# Compile of ShiftSrcMux.v was successful.
+# Compile of WriteDataMux.v was successful.
+# 17 compiles, 0 failed with no errors.
+restart -f
+# Loading work.cpu
+# Loading work.memAddrMux
+# Loading work.ALUAMux
+# Loading work.ALUBMux
+# Loading work.PCSrcCtrlMux
+# Loading work.WriteRegMux
+# Loading work.WriteDataMux
+# Loading work.ShiftNMux
+# Loading work.ShiftSrcMux
+# Loading work.SignExtend
+# Loading work.ctrl_unit
+# Loading work.registrador(behavioral_arch)
+# Loading work.ram_constants
+# Loading work.memoria(behavioral_arch)
+# Loading work.instr_reg(behavioral_arch)
+# Loading work.banco_reg(behavioral_arch)
+# Loading work.ula32(behavioral)
+# Loading work.regdesloc(behavioral_arch)
+# ** Warning: (vsim-3015) C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/cpu.v(249): [PCDPC] - Port size (1) does not match connection size (2) for port 'ShiftNCtrl'. The port definition is at: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v(24).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/CTRL File: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v
+# ** Warning: (vsim-3015) C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/cpu.v(249): [PCDPC] - Port size (1) does not match connection size (3) for port 'ShiftCtrl'. The port definition is at: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v(25).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/CTRL File: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v
+force -freeze sim:/cpu/clk 1 0, 0 {50 ps} -r 100
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Registers
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Registers
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart -f
+# ** Warning: (vsim-3015) C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/cpu.v(249): [PCDPC] - Port size (1) does not match connection size (2) for port 'ShiftNCtrl'. The port definition is at: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v(24).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/CTRL File: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v
+# ** Warning: (vsim-3015) C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/cpu.v(249): [PCDPC] - Port size (1) does not match connection size (3) for port 'ShiftCtrl'. The port definition is at: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v(25).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/CTRL File: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v
+force -freeze sim:/cpu/clk 1 0, 0 {50 ps} -r 100
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Registers
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Registers
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of ula32.vhd was successful.
+# Compile of Banco_reg.vhd was successful.
+# Compile of Instr_Reg.vhd was successful.
+# Compile of Memoria.vhd was successful.
+# Compile of RegDesloc.vhd was successful.
+# Compile of Registrador.vhd was successful.
+# Compile of cpu.v was successful.
+# Compile of ctrl_unit.v was successful.
+# Compile of SignExtend.v was successful.
+# Compile of WriteRegMux.v was successful.
+# Compile of ALUAMux.v was successful.
+# Compile of ALUBMux.v was successful.
+# Compile of memAddrMux.v was successful.
+# Compile of PCSrcCtrlMux.v was successful.
+# Compile of ShiftNMux.v was successful.
+# Compile of ShiftSrcMux.v was successful.
+# Compile of WriteDataMux.v was successful.
+# 17 compiles, 0 failed with no errors.
+quit -sim
+# End time: 18:48:49 on Apr 06,2022, Elapsed time: 0:20:39
+# Errors: 44, Warnings: 70
+vsim -gui work.cpu
+# vsim -gui work.cpu 
+# Start time: 18:49:23 on Apr 06,2022
+# Loading work.cpu
+# Loading work.memAddrMux
+# Loading work.ALUAMux
+# Loading work.ALUBMux
+# Loading work.PCSrcCtrlMux
+# Loading work.WriteRegMux
+# Loading work.WriteDataMux
+# Loading work.ShiftNMux
+# Loading work.ShiftSrcMux
+# Loading work.SignExtend
+# Loading work.ctrl_unit
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.registrador(behavioral_arch)
+# Loading ieee.numeric_std(body)
+# Loading lpm.lpm_components
+# Loading work.ram_constants
+# Loading work.memoria(behavioral_arch)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading lpm.lpm_common_conversion(body)
+# Loading lpm.lpm_device_families(body)
+# Loading lpm.lpm_ram_dq(lpm_syn)
+# Loading work.instr_reg(behavioral_arch)
+# Loading work.banco_reg(behavioral_arch)
+# Loading work.ula32(behavioral)
+# Loading work.regdesloc(behavioral_arch)
+# ** Warning: (vsim-3015) C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/cpu.v(249): [PCDPC] - Port size (1) does not match connection size (2) for port 'ShiftNCtrl'. The port definition is at: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v(24).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/CTRL File: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v
+# ** Warning: (vsim-3015) C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/cpu.v(249): [PCDPC] - Port size (1) does not match connection size (3) for port 'ShiftCtrl'. The port definition is at: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v(25).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/CTRL File: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v
+add wave -position end  sim:/cpu/clk
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gabri  Hostname: DESKTOP-HN1LS9B  ProcessID: 15232
+#           Attempting to use alternate WLF file "./wlftam24q6".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftam24q6
+add wave -position end  sim:/cpu/reset
+add wave -position end  sim:/cpu/CTRL/STATE
+add wave -position end  sim:/cpu/Registers/Cluster(25)
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Registers
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Registers
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+force -freeze sim:/cpu/clk 1 0, 0 {50 ps} -r 100
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Load canceled
+run
+run
+run
+add wave -position end  sim:/cpu/ShiftNCtrl
+add wave -position end  sim:/cpu/ShiftRegIn
+add wave -position end  sim:/cpu/ShiftRegN
+add wave -position end  sim:/cpu/ShiftCtrl
+restart -f
+# ** Warning: (vsim-3015) C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/cpu.v(249): [PCDPC] - Port size (1) does not match connection size (2) for port 'ShiftNCtrl'. The port definition is at: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v(24).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/CTRL File: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v
+# ** Warning: (vsim-3015) C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/cpu.v(249): [PCDPC] - Port size (1) does not match connection size (3) for port 'ShiftCtrl'. The port definition is at: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v(25).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/CTRL File: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v
+force -freeze sim:/cpu/clk 1 0, 0 {50 ps} -r 100
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Registers
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Registers
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+# End time: 19:06:01 on Apr 06,2022, Elapsed time: 0:16:38
+# Errors: 23, Warnings: 34
+vsim -gui work.cpu
+# vsim -gui work.cpu 
+# Start time: 19:07:01 on Apr 06,2022
+# Loading work.cpu
+# Loading work.memAddrMux
+# Loading work.ALUAMux
+# Loading work.ALUBMux
+# Loading work.PCSrcCtrlMux
+# Loading work.WriteRegMux
+# Loading work.WriteDataMux
+# Loading work.ShiftNMux
+# Loading work.ShiftSrcMux
+# Loading work.SignExtend
+# Loading work.ctrl_unit
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.registrador(behavioral_arch)
+# Loading ieee.numeric_std(body)
+# Loading lpm.lpm_components
+# Loading work.ram_constants
+# Loading work.memoria(behavioral_arch)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading lpm.lpm_common_conversion(body)
+# Loading lpm.lpm_device_families(body)
+# Loading lpm.lpm_ram_dq(lpm_syn)
+# Loading work.instr_reg(behavioral_arch)
+# Loading work.banco_reg(behavioral_arch)
+# Loading work.ula32(behavioral)
+# Loading work.regdesloc(behavioral_arch)
+# ** Warning: (vsim-3015) C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/cpu.v(249): [PCDPC] - Port size (1) does not match connection size (2) for port 'ShiftNCtrl'. The port definition is at: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v(24).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/CTRL File: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v
+# ** Warning: (vsim-3015) C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/cpu.v(249): [PCDPC] - Port size (1) does not match connection size (3) for port 'ShiftCtrl'. The port definition is at: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v(25).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/CTRL File: C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v
+add wave -position end  sim:/cpu/clk
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gabri  Hostname: DESKTOP-HN1LS9B  ProcessID: 15232
+#           Attempting to use alternate WLF file "./wlft4qien9".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft4qien9
+add wave -position end  sim:/cpu/reset
+add wave -position end  sim:/cpu/CTRL/STATE
+add wave -position end  sim:/cpu/Registers/Cluster(25)
+add wave -position end  sim:/cpu/ShiftCtrl
+add wave -position end  sim:/cpu/ShiftRegN
+add wave -position end  sim:/cpu/ShiftRegIn
+add wave -position end  sim:/cpu/ShiftRegOut
+force -freeze sim:/cpu/clk 1 0, 0 {50 ps} -r 100
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Registers
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Registers
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position end  sim:/cpu/ShiftSrcCrtl
+add wave -position end  sim:/cpu/ShiftNCtrl
+add wave -position end  sim:/cpu/Registers/Cluster(15)
+run
+run
+run
+run
+quit -sim
+# End time: 19:14:20 on Apr 06,2022, Elapsed time: 0:07:19
+# Errors: 11, Warnings: 18
+# Compile of ctrl_unit.v was successful.
+vsim -gui work.cpu
+# vsim -gui work.cpu 
+# Start time: 19:14:33 on Apr 06,2022
+# Loading work.cpu
+# Loading work.memAddrMux
+# Loading work.ALUAMux
+# Loading work.ALUBMux
+# Loading work.PCSrcCtrlMux
+# Loading work.WriteRegMux
+# Loading work.WriteDataMux
+# Loading work.ShiftNMux
+# Loading work.ShiftSrcMux
+# Loading work.SignExtend
+# Loading work.ctrl_unit
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.registrador(behavioral_arch)
+# Loading ieee.numeric_std(body)
+# Loading lpm.lpm_components
+# Loading work.ram_constants
+# Loading work.memoria(behavioral_arch)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading lpm.lpm_common_conversion(body)
+# Loading lpm.lpm_device_families(body)
+# Loading lpm.lpm_ram_dq(lpm_syn)
+# Loading work.instr_reg(behavioral_arch)
+# Loading work.banco_reg(behavioral_arch)
+# Loading work.ula32(behavioral)
+# Loading work.regdesloc(behavioral_arch)
+add wave -position end  sim:/cpu/clk
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gabri  Hostname: DESKTOP-HN1LS9B  ProcessID: 15232
+#           Attempting to use alternate WLF file "./wlftqv0vvg".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftqv0vvg
+add wave -position end  sim:/cpu/reset
+add wave -position end  sim:/cpu/CTRL/STATE
+add wave -position end  sim:/cpu/ShiftRegIn
+add wave -position end  sim:/cpu/ShiftRegN
+add wave -position end  sim:/cpu/ShiftRegOut
+add wave -position end  sim:/cpu/ShiftNCtrl
+add wave -position end  sim:/cpu/ShiftCtrl
+add wave -position end  sim:/cpu/ShiftSrcCrtl
+add wave -position end  sim:/cpu/Registers/Cluster(15)
+force -freeze sim:/cpu/clk 1 0, 0 {50 ps} -r 100
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Registers
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Registers
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position end  sim:/cpu/Registers/Cluster(25)
+run
+run
+run
+run
+run
+run
+add wave -position end  sim:/cpu/ShiftSrcCtrl
+# Compile of ula32.vhd was successful.
+# Compile of Banco_reg.vhd was successful.
+# Compile of Instr_Reg.vhd was successful.
+# Compile of Memoria.vhd was successful.
+# Compile of RegDesloc.vhd was successful.
+# Compile of Registrador.vhd was successful.
+# Compile of cpu.v was successful.
+# Compile of ctrl_unit.v was successful.
+# Compile of SignExtend.v was successful.
+# Compile of WriteRegMux.v was successful.
+# Compile of ALUAMux.v was successful.
+# Compile of ALUBMux.v was successful.
+# Compile of memAddrMux.v was successful.
+# Compile of PCSrcCtrlMux.v was successful.
+# Compile of ShiftNMux.v was successful.
+# Compile of ShiftSrcMux.v was successful.
+# Compile of WriteDataMux.v was successful.
+# 17 compiles, 0 failed with no errors.
+restart -f
+# Loading work.cpu
+# Loading work.memAddrMux
+# Loading work.ALUAMux
+# Loading work.ALUBMux
+# Loading work.PCSrcCtrlMux
+# Loading work.WriteRegMux
+# Loading work.WriteDataMux
+# Loading work.ShiftNMux
+# Loading work.ShiftSrcMux
+# Loading work.SignExtend
+# Loading work.ctrl_unit
+# Loading work.registrador(behavioral_arch)
+# Loading work.ram_constants
+# Loading work.memoria(behavioral_arch)
+# Loading work.instr_reg(behavioral_arch)
+# Loading work.banco_reg(behavioral_arch)
+# Loading work.ula32(behavioral)
+# Loading work.regdesloc(behavioral_arch)
+# Warning in wave window restart: (vish-4014) No objects found matching '/cpu/ShiftSrcCrtl'. 
+force -freeze sim:/cpu/clk 1 0, 0 {50 ps} -r 100
+# Load canceled
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Registers
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Registers
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+run -continue
+run -continue
+run
+run
+run
+run -all
+# Compile of ula32.vhd was successful.
+# Compile of Banco_reg.vhd was successful.
+# Compile of Instr_Reg.vhd was successful.
+# Compile of Memoria.vhd was successful.
+# Compile of RegDesloc.vhd was successful.
+# Compile of Registrador.vhd was successful.
+# Compile of cpu.v was successful.
+# Compile of ctrl_unit.v was successful.
+# Compile of SignExtend.v was successful.
+# Compile of WriteRegMux.v was successful.
+# Compile of ALUAMux.v was successful.
+# Compile of ALUBMux.v was successful.
+# Compile of memAddrMux.v was successful.
+# Compile of PCSrcCtrlMux.v was successful.
+# Compile of ShiftNMux.v was successful.
+# Compile of ShiftSrcMux.v was successful.
+# Compile of WriteDataMux.v was successful.
+# 17 compiles, 0 failed with no errors.
+# Break key hit
+# Break in Module ctrl_unit at C:/Users/gabri/OneDrive/Documentos/Dev/projeto-infrahard/projeto-infrahard/developed-components/ctrl_unit.v line 134
+restart -f
+# Compile of ula32.vhd was successful.
+# Compile of Banco_reg.vhd was successful.
+# Compile of Instr_Reg.vhd was successful.
+# Compile of Memoria.vhd was successful.
+# Compile of RegDesloc.vhd was successful.
+# Compile of Registrador.vhd was successful.
+# Compile of cpu.v was successful.
+# Compile of ctrl_unit.v was successful.
+# Compile of SignExtend.v was successful.
+# Compile of WriteRegMux.v was successful.
+# Compile of ALUAMux.v was successful.
+# Compile of ALUBMux.v was successful.
+# Compile of memAddrMux.v was successful.
+# Compile of PCSrcCtrlMux.v was successful.
+# Compile of ShiftNMux.v was successful.
+# Compile of ShiftSrcMux.v was successful.
+# Compile of WriteDataMux.v was successful.
+# 17 compiles, 0 failed with no errors.
+# Loading work.cpu
+# Loading work.memAddrMux
+# Loading work.ALUAMux
+# Loading work.ALUBMux
+# Loading work.PCSrcCtrlMux
+# Loading work.WriteRegMux
+# Loading work.WriteDataMux
+# Loading work.ShiftNMux
+# Loading work.ShiftSrcMux
+# Loading work.SignExtend
+# Loading work.ctrl_unit
+# Loading work.registrador(behavioral_arch)
+# Loading work.ram_constants
+# Loading work.memoria(behavioral_arch)
+# Loading work.instr_reg(behavioral_arch)
+# Loading work.banco_reg(behavioral_arch)
+# Loading work.ula32(behavioral)
+# Loading work.regdesloc(behavioral_arch)
+restart -f
+restart -f
+force -freeze sim:/cpu/clk 1 0, 0 {50 ps} -r 100
+run -all
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Registers
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Registers
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Three
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_Two
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM_plus_One
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/Memory_
+# Break key hit
+# Simulation stop requested.

@@ -21,8 +21,8 @@ module ctrl_unit(
     output reg WriteInstruction,
     output reg WriteReg,
     output reg ShiftSrcCtrl,
-    output reg ShiftNCtrl,
-    output reg ShiftCtrl,
+    output reg [1:0] ShiftNCtrl,
+    output reg [2:0] ShiftCtrl,
 
     // MUX Controllers
     output reg [2:0] MemAddrCtrl,
@@ -598,7 +598,7 @@ always @(posedge clk) begin
                     ShiftCtrl = 3'b001;
                     ShiftSrcCtrl = 1'b0;
 
-                    COUNTER = 3'b001;
+                    COUNTER = COUNTER + 1'b1;
                 end else if (COUNTER == 3'b001) begin
                     WritePC = 1'b0;
                     WriteA = 1'b0;
@@ -619,7 +619,7 @@ always @(posedge clk) begin
                     ShiftCtrl = 3'b010;
                     ShiftSrcCtrl = 1'b0;
 
-                    COUNTER = 3'b010;
+                    COUNTER = COUNTER + 1'b1;
                 end else if (COUNTER == 3'b010) begin
                     WritePC = 1'b0;
                     WriteA = 1'b0;
