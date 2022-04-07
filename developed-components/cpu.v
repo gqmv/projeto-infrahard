@@ -19,6 +19,10 @@ module cpu(
     wire WriteInstruction;
     wire WriteReg;
     wire [2:0] ShiftCtrl;
+    wire MultCtrl;
+    wire DivCtrl;
+    wire WriteHILO;
+    
 
 // ALU Flags
     wire Overflow;
@@ -37,6 +41,7 @@ module cpu(
     wire [2:0] ALUCtrl;
     wire [1:0] ShiftNCtrl;
     wire ShiftSrcCtrl;
+    wire HILOCtrl;
     
 // Data Wires (32 BITS)
     wire [31:0] PCSrc;
@@ -67,6 +72,15 @@ module cpu(
     wire [31:0] ALUResult;
     wire [31:0] WriteData;
     wire [31:0] ShiftRegIn;
+
+    wire [31:0] mult_high_out;
+	wire [31:0] mult_low_out;
+	wire [31:0] div_high_out;
+	wire [31:0] div_low_out;
+	wire [31:0] high_in;
+	wire [31:0] low_in;
+	wire [31:0] high_out;
+	wire [31:0] low_out;
 
 // Data Wires (Less than 32 BITS)
     wire [4:0] WriteRegOut;
@@ -245,6 +259,65 @@ module cpu(
         Sign_Extend
     );
 
+// Mult module
+    mult MULT (
+		clk,
+		MultCtrl,
+		reset,
+		A,
+		B,
+		mult_high_out,
+		mult_low_out,
+		mult_end
+	);
+
+// Div module
+    div DIV (
+    	clk,
+    	DivCtrl,
+        reset,
+        A,
+    	B,
+        div_high_out,
+    	div_low_out,
+    	div_end,
+    	div_zero
+	);
+
+// Muxes at mult and div
+	MultDivMuxes Low_Mux ( //done
+		mult_low_out,
+		div_low_out,
+		HILOCtrl,
+		low_in
+	);
+
+    // Muxes at mult and div
+	MultDivMuxes High_Mux ( //done
+		mult_high_out,
+		div_high_out,
+		HILOCtrl,
+		high_in
+	);
+
+// LOW registers
+    LOWReg LOW_Reg (
+        low_in,
+        clk,
+        reset,
+        WriteHILO,
+        LO
+    );
+
+// Hi registers
+    HIReg HI_Reg (
+        high_in,
+        clk,
+        reset,
+        WriteHILO,
+        HI
+    );
+
 // Control Unit
     ctrl_unit CTRL(
         clk,
@@ -273,7 +346,11 @@ module cpu(
         WriteRegCtrl,
         WriteDataCtrl,
         ALUCtrl,
-        reset    
+        MultCtrl,
+        DivCtrl,
+        HILOCtrl,
+        WriteHILO,
+        reset
     );
 
 endmodule
