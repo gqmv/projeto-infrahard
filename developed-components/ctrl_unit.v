@@ -3,6 +3,8 @@ module ctrl_unit(
     input wire reset,
     input wire [5:0] Instruction_31_26,
     input wire [15:0] Instruction_15_0,
+    input mult_end,
+    input div_end,
 
 
     // Flags
