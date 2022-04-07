@@ -94,6 +94,7 @@ module cpu(
     wire [15:0] Instruction_15_0;
 
 // Registers
+    wire [31:0] out_nxt;
 
     Registrador PC_reg(
         clk,
@@ -286,17 +287,17 @@ module cpu(
 
 // Muxes at mult and div
 	MultDivMuxes Low_Mux ( //done
-		mult_low_out,
-		div_low_out,
 		HILOCtrl,
+        mult_low_out,
+		div_low_out,
 		low_in
 	);
 
     // Muxes at mult and div
 	MultDivMuxes High_Mux ( //done
-		mult_high_out,
-		div_high_out,
 		HILOCtrl,
+        mult_high_out,
+		div_high_out,
 		high_in
 	);
 
@@ -306,7 +307,8 @@ module cpu(
         clk,
         reset,
         WriteHILO,
-        LO
+        LO,
+        out_nxt
     );
 
 // Hi registers
@@ -315,7 +317,8 @@ module cpu(
         clk,
         reset,
         WriteHILO,
-        HI
+        HI,
+        out_nxt
     );
 
 // Control Unit
@@ -324,6 +327,8 @@ module cpu(
         reset,
         Instruction_31_26,
         Instruction_15_0,
+        mult_end,
+        div_end,
         Overflow,
         Negative,
         GT,
@@ -339,6 +344,9 @@ module cpu(
         ShiftSrcCtrl,
         ShiftNCtrl,
         ShiftCtrl,
+        WriteHILO,
+        MultCtrl,
+        DivCtrl,
         MemAddrCtrl,
         ALUSrcACtrl,
         ALUSrcBCtrl,
@@ -346,10 +354,7 @@ module cpu(
         WriteRegCtrl,
         WriteDataCtrl,
         ALUCtrl,
-        MultCtrl,
-        DivCtrl,
         HILOCtrl,
-        WriteHILO,
         reset
     );
 

@@ -1,5 +1,5 @@
 module LOWReg (
-    input in,
+    input [31:0] in,
     input clk,
     input reset,
     input WriteHILO,
