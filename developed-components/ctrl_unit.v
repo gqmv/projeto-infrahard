@@ -90,7 +90,12 @@ module ctrl_unit(
 
     parameter ST_PRECALC        =       6'd5;
     parameter ST_PRECALC2       =       6'd6;
-    
+
+    parameter ST_MULT_CALC      =       6'd46;
+    parameter ST_MULT_RESULT    =       6'd47;
+    parameter ST_DIV_CALC     =         6'd48;
+    parameter ST_DIV_RESULT     =       6'd49;
+
     // Type R
     parameter ST_ADD            =       6'd7;
     parameter ST_AND            =       6'd8;
@@ -131,6 +136,7 @@ module ctrl_unit(
 
     parameter ST_OPCODE404      =       6'd43;
     parameter ST_OVERFLOW       =       6'd44;
+    parameter ST_DIVZERO        =       6'd45;
 
 initial begin
     reset_out = 1'b1;
@@ -651,7 +657,7 @@ always @(posedge clk) begin
                 ALUCtrl = 3'b000;
                 COUNTER = 3'b000;
 
-                nextState = ST_MULT_CALC;
+                STATE = ST_MULT_CALC;
             end
 
             ST_MULT_CALC: begin // ver se ta certo
@@ -676,9 +682,9 @@ always @(posedge clk) begin
                 ALUCtrl = 3'b000;
                 COUNTER = 3'b000;
                 if (mult_end) 
-                    nextState = ST_MULT_RESULT;
+                    STATE = ST_MULT_RESULT;
                 else
-                    nextState = ST_MULT_CALC;
+                    STATE = ST_MULT_CALC;
             end
 
             ST_MULT_RESULT: begin
@@ -703,7 +709,7 @@ always @(posedge clk) begin
                 ALUCtrl = 3'b000;
                 COUNTER = 3'b000;
 
-                nextState = FETCH;
+                STATE = ST_FETCH;
             end
 
             ST_DIV: begin
@@ -728,7 +734,7 @@ always @(posedge clk) begin
                 ALUCtrl = 3'b000;
                 COUNTER = 3'b000;
 
-                nextState = ST_DIV_CALC;
+                STATE = ST_DIV_CALC;
             end
 
             ST_DIV_CALC: begin // ver se ta certo
@@ -752,13 +758,13 @@ always @(posedge clk) begin
                 WriteDataCtrl = 3'b000;
                 ALUCtrl = 3'b000;
                 COUNTER = 3'b000;
-		    	if (divZero)
-		    		nextState = ST_FETCH;           // quando tiver erro de divzero trocar aqui
+		    	if (ST_DIVZERO)
+		    		STATE = ST_FETCH;           // quando tiver erro de divzero trocar aqui
 		    	else begin
 		    		if (div_end)
-		    			nextState = DIV_RESULT;
+		    			STATE = ST_DIV_RESULT;
 		    		else 
-		    			nextState = ST_DIV_CALC;
+		    			STATE = ST_DIV_CALC;
 		    	end
             end
 
@@ -784,7 +790,7 @@ always @(posedge clk) begin
                 ALUCtrl = 3'b000;
                 COUNTER = 3'b000;
 
-                nextState = FETCH;
+                STATE = ST_FETCH;
             end
 
             ST_MFHI: begin
@@ -809,7 +815,7 @@ always @(posedge clk) begin
                 ALUCtrl = 3'b000;
                 COUNTER = 3'b000;
 
-                nextState = FETCH;
+                STATE = ST_FETCH;
             end
 
             ST_MFLO: begin
@@ -834,7 +840,7 @@ always @(posedge clk) begin
                 ALUCtrl = 3'b000;
                 COUNTER = 3'b000;
 
-                nextState = FETCH;
+                STATE = ST_FETCH;
             end
             
             ST_SLL: begin

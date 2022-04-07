@@ -1,13 +1,13 @@
 module div(
-    input wire clk;
-    input wire DivCtrl;
-    input wire reset;
-    input wire [31:0] a;
-    input wire [31:0] b;
-    output reg [31:0] high;
-    output reg [31:0] low;
-    output reg div_end;
-    output reg div_zero;
+    input wire clk,
+    input wire DivCtrl,
+    input wire reset,
+    input wire [31:0] a,
+    input wire [31:0] b,
+    output reg [31:0] high,
+    output reg [31:0] low,
+    output reg div_end,
+    output reg div_zero
 
 );
 

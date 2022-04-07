@@ -1,10 +1,10 @@
 module HIReg (
-    input in;
-    input clk;
-    input reset;
-    input WriteHILO;
-    output [0:31] HI;
-    reg [0:31] out_nxt;
+    input in,
+    input clk,
+    input reset,
+    input WriteHILO,
+    output [0:31] HI,
+    reg [0:31] out_nxt
 );
 
 assign HI = out_nxt;

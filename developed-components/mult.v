@@ -1,12 +1,12 @@
 module mult(
-    input wire clk;
-    input wire MultCtrl;
-    input wire reset;
-    input wire [31:0] a;
-    input wire [31:0] b;
-    output reg [31:0] high;
-    output reg [31:0] low;
-    output reg mult_end;
+    input wire clk,
+    input wire MultCtrl,
+    input wire reset,
+    input wire [31:0] a,
+    input wire [31:0] b,
+    output reg [31:0] high,
+    output reg [31:0] low,
+    output reg mult_end
 
 );
 
@@ -31,7 +31,7 @@ module mult(
             add = {a, 33'b0};
             comp = (~a + 1'b1);         // invert bits + add one
             sub = {comp, 33'b0}; 
-            prod = {32'b0, b, 1'b0};
+            produto = {32'b0, b, 1'b0};
             cont = 32;
             mult_end = 1'b0;
         end
