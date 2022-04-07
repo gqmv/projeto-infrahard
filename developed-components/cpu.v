@@ -19,6 +19,10 @@ module cpu(
     wire WriteInstruction;
     wire WriteReg;
     wire [2:0] ShiftCtrl;
+    wire MultCtrl;
+    wire DivCtrl;
+    wire WriteHILO;
+    
 
 // ALU Flags
     wire Overflow;
@@ -36,8 +40,8 @@ module cpu(
     wire [2:0] WriteDataCtrl;
     wire [2:0] ALUCtrl;
     wire [1:0] ShiftNCtrl;
-    wire ShiftSrcCrtl;
-  
+    wire ShiftSrcCtrl;
+    wire HILOCtrl;
     
 // Data Wires (32 BITS)
     wire [31:0] PCSrc;
@@ -71,6 +75,15 @@ module cpu(
     wire [31:0] MuxHIOut;
     wire [31:0] MuxLOOut;
 
+    wire [31:0] mult_high_out;
+	wire [31:0] mult_low_out;
+	wire [31:0] div_high_out;
+	wire [31:0] div_low_out;
+	wire [31:0] high_in;
+	wire [31:0] low_in;
+	wire [31:0] high_out;
+	wire [31:0] low_out;
+
 // Data Wires (Less than 32 BITS)
     wire [4:0] WriteRegOut;
     wire [4:0] ShiftRegN;
@@ -83,6 +96,7 @@ module cpu(
     wire [15:0] Instruction_15_0;
 
 // Registers
+    wire [31:0] out_nxt;
 
     Registrador PC_reg(
         clk,
@@ -248,12 +262,75 @@ module cpu(
         Sign_Extend
     );
 
+// Mult module
+    mult MULT (
+		clk,
+		MultCtrl,
+		reset,
+		A,
+		B,
+		mult_high_out,
+		mult_low_out,
+		mult_end
+	);
+
+// Div module
+    div DIV (
+    	clk,
+    	DivCtrl,
+        reset,
+        A,
+    	B,
+        div_high_out,
+    	div_low_out,
+    	div_end,
+    	div_zero
+	);
+
+// Muxes at mult and div
+	MultDivMuxes Low_Mux ( //done
+		HILOCtrl,
+        mult_low_out,
+		div_low_out,
+		low_in
+	);
+
+    // Muxes at mult and div
+	MultDivMuxes High_Mux ( //done
+		HILOCtrl,
+        mult_high_out,
+		div_high_out,
+		high_in
+	);
+
+// LOW registers
+    LOWReg LOW_Reg (
+        low_in,
+        clk,
+        reset,
+        WriteHILO,
+        LO,
+        out_nxt
+    );
+
+// Hi registers
+    HIReg HI_Reg (
+        high_in,
+        clk,
+        reset,
+        WriteHILO,
+        HI,
+        out_nxt
+    );
+
 // Control Unit
     ctrl_unit CTRL(
         clk,
         reset,
         Instruction_31_26,
         Instruction_15_0,
+        mult_end,
+        div_end,
         Overflow,
         Negative,
         GT,
@@ -269,6 +346,9 @@ module cpu(
         ShiftSrcCrtl,
         ShiftNCtrl,
         ShiftCtrl,
+        WriteHILO,
+        MultCtrl,
+        DivCtrl,
         MemAddrCtrl,
         ALUSrcACtrl,
         ALUSrcBCtrl,
@@ -276,7 +356,8 @@ module cpu(
         WriteRegCtrl,
         WriteDataCtrl,
         ALUCtrl,
-        reset    
+        HILOCtrl,
+        reset
     );
 
 endmodule

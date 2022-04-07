@@ -3,6 +3,8 @@ module ctrl_unit(
     input wire reset,
     input wire [5:0] Instruction_31_26,
     input wire [15:0] Instruction_15_0,
+    input mult_end,
+    input div_end,
 
 
     // Flags
@@ -24,6 +26,9 @@ module ctrl_unit(
     output reg ShiftSrcCtrl,
     output reg [1:0] ShiftNCtrl,
     output reg [2:0] ShiftCtrl,
+    output reg WriteHILO,
+    output reg DivCtrl,
+    output reg MultCtrl,
 
     // MUX Controllers
     output reg [2:0] MemAddrCtrl,
@@ -33,6 +38,7 @@ module ctrl_unit(
     output reg [1:0] WriteRegCtrl,
     output reg [2:0] WriteDataCtrl,
     output reg [2:0] ALUCtrl,
+    output reg HILOCtrl,
     output reg reset_out
 
 );
@@ -67,7 +73,7 @@ module ctrl_unit(
     parameter Funct_Mult        =       6'b011000;
     parameter Funct_Jr          =       6'b001000;
     parameter Funct_Mfhi        =       6'b010000;
-    parameter Funct_Mflo        =       6'b010010; 
+    parameter Funct_Mflo        =       6'b010010;
     parameter Funct_Sll         =       6'b000000;
     parameter Funct_Sllv        =       6'b000100;
     parameter Funct_Slt         =       6'b101010;
@@ -85,7 +91,12 @@ module ctrl_unit(
 
     parameter ST_PRECALC        =       6'd5;
     parameter ST_PRECALC2       =       6'd6;
-    
+
+    parameter ST_MULT_CALC      =       6'd46;
+    parameter ST_MULT_RESULT    =       6'd47;
+    parameter ST_DIV_CALC     =         6'd48;
+    parameter ST_DIV_RESULT     =       6'd49;
+
     // Type R
     parameter ST_ADD            =       6'd7;
     parameter ST_AND            =       6'd8;
@@ -126,6 +137,7 @@ module ctrl_unit(
 
     parameter ST_OPCODE404      =       6'd43;
     parameter ST_OVERFLOW       =       6'd44;
+    parameter ST_DIVZERO        =       6'd45;
 
 initial begin
     reset_out = 1'b1;
@@ -134,7 +146,10 @@ end
 
 always @(posedge clk) begin
     if (reset == 1'b1) begin
-            
+            HILOCtrl = 1'b0;
+            WriteHILO = 1'b0;
+            DivCtrl = 1'b0;
+            MultCtrl = 1'b0;
             WritePC = 1'b0;
             WriteA = 1'b0;
             WriteB = 1'b0;
@@ -157,7 +172,11 @@ always @(posedge clk) begin
     end else begin
         case (STATE)
             ST_FETCH: begin
-                if (COUNTER == 3'b000 || COUNTER == 3'b001 || COUNTER == 3'b010) begin 
+                if (COUNTER == 3'b000 || COUNTER == 3'b001 || COUNTER == 3'b010) begin
+                    HILOCtrl = 1'b0;
+                    WriteHILO = 1'b0;
+                    DivCtrl = 1'b0;
+                    MultCtrl = 1'b0;
                     WritePC = 1'b0;
                     WriteA = 1'b0;
                     WriteB = 1'b0;
@@ -182,6 +201,10 @@ always @(posedge clk) begin
 
                 end 
                 else if (COUNTER == 3'b011) begin 
+                    HILOCtrl = 1'b0;
+                    WriteHILO = 1'b0;
+                    DivCtrl = 1'b0;
+                    MultCtrl = 1'b0;
                     WriteA = 1'b0;
                     WriteB = 1'b0;
                     WriteALUOut = 1'b0;
@@ -201,6 +224,10 @@ always @(posedge clk) begin
             end
         
             ST_PRECALC: begin
+                HILOCtrl = 1'b0;
+                WriteHILO = 1'b0;
+                DivCtrl = 1'b0;
+                MultCtrl = 1'b0;
                 WritePC = 1'b0;
                 WriteA = 1'b0;
                 WriteB = 1'b0;
@@ -225,6 +252,10 @@ always @(posedge clk) begin
             end
 
             ST_PRECALC2: begin
+                HILOCtrl = 1'b0;
+                WriteHILO = 1'b0;
+                DivCtrl = 1'b0;
+                MultCtrl = 1'b0;
                 WritePC = 1'b0;
                 WriteA = 1'b1;
                 WriteB = 1'b1;
@@ -400,6 +431,10 @@ always @(posedge clk) begin
 
 
             ST_ADD: begin
+                HILOCtrl = 1'b0;
+                WriteHILO = 1'b0;
+                DivCtrl = 1'b0;
+                MultCtrl = 1'b0;
                 WritePC = 1'b0;
                 WriteA = 1'b0;
                 WriteB = 1'b0;
@@ -424,6 +459,10 @@ always @(posedge clk) begin
             end
 
             ST_ADDI: begin
+                HILOCtrl = 1'b0;
+                WriteHILO = 1'b0;
+                DivCtrl = 1'b0;
+                MultCtrl = 1'b0;
                 WritePC = 1'b0;
                 WriteA = 1'b0;
                 WriteB = 1'b0;
@@ -454,6 +493,10 @@ always @(posedge clk) begin
             end
 
             ST_ADDI_ADDIU: begin
+                HILOCtrl = 1'b0;
+                WriteHILO = 1'b0;
+                DivCtrl = 1'b0;
+                MultCtrl = 1'b0;
                 WritePC = 1'b0;
                 WriteA = 1'b0;
                 WriteB = 1'b0;
@@ -478,6 +521,10 @@ always @(posedge clk) begin
             end
 
             ST_SAVE_RESULT: begin
+                HILOCtrl = 1'b0;
+                WriteHILO = 1'b0;
+                DivCtrl = 1'b0;
+                MultCtrl = 1'b0;
                 WritePC = 1'b0;
                 WriteA = 1'b0;
                 WriteB = 1'b0;
@@ -507,6 +554,10 @@ always @(posedge clk) begin
             end
 
             ST_AND: begin
+                HILOCtrl = 1'b0;
+                WriteHILO = 1'b0;
+                DivCtrl = 1'b0;
+                MultCtrl = 1'b0;
                 WritePC = 1'b0;
                 WriteA = 1'b0;
                 WriteB = 1'b0;
@@ -531,6 +582,10 @@ always @(posedge clk) begin
             end
 
             ST_SUB: begin
+                HILOCtrl = 1'b0;
+                WriteHILO = 1'b0;
+                DivCtrl = 1'b0;
+                MultCtrl = 1'b0;
                 WritePC = 1'b0;
                 WriteA = 1'b0;
                 WriteB = 1'b0;
@@ -555,6 +610,10 @@ always @(posedge clk) begin
             end
 
             ST_ADDIU: begin
+                HILOCtrl = 1'b0;
+                WriteHILO = 1'b0;
+                DivCtrl = 1'b0;
+                MultCtrl = 1'b0;
                 WritePC = 1'b0;
                 WriteA = 1'b0;
                 WriteB = 1'b0;
@@ -577,9 +636,220 @@ always @(posedge clk) begin
                 COUNTER = 3'b010;
                 STATE = ST_ADDI_ADDIU;
             end
+            ST_MULT: begin
+                HILOCtrl = 1'b0;
+                WriteHILO = 1'b0;
+                DivCtrl = 1'b0;
+                MultCtrl = 1'b1;
+                WritePC = 1'b0;
+                WriteA = 1'b0;
+                WriteB = 1'b0;
+                WriteALUOut = 1'b0;
+                WriteMem = 1'b0;
+                WriteInstruction = 1'b0;
+                WriteReg = 1'b0;
 
+                MemAddrCtrl = 3'b000;
+                ALUSrcACtrl = 2'b00;
+                ALUSrcBCtrl = 3'b000;
+                PCSrcCtrl = 2'b00;
+                WriteRegCtrl = 3'b000;
+                WriteDataCtrl = 3'b000;
+                ALUCtrl = 3'b000;
+                COUNTER = 3'b000;
+
+                STATE = ST_MULT_CALC;
+            end
+
+            ST_MULT_CALC: begin // ver se ta certo
+                HILOCtrl = 1'b0;
+                WriteHILO = 1'b0;
+                DivCtrl = 1'b0;
+                MultCtrl = 1'b0;
+                WritePC = 1'b0;
+                WriteA = 1'b0;
+                WriteB = 1'b0;
+                WriteALUOut = 1'b0;
+                WriteMem = 1'b0;
+                WriteInstruction = 1'b0;
+                WriteReg = 1'b0;
+
+                MemAddrCtrl = 3'b000;
+                ALUSrcACtrl = 2'b00;
+                ALUSrcBCtrl = 3'b000;
+                PCSrcCtrl = 2'b00;
+                WriteRegCtrl = 3'b000;
+                WriteDataCtrl = 3'b000;
+                ALUCtrl = 3'b000;
+                COUNTER = 3'b000;
+                if (mult_end) 
+                    STATE = ST_MULT_RESULT;
+                else
+                    STATE = ST_MULT_CALC;
+            end
+
+            ST_MULT_RESULT: begin
+                HILOCtrl = 1'b0;
+                WriteHILO = 1'b1;
+                DivCtrl = 1'b0;
+                MultCtrl = 1'b0;
+                WritePC = 1'b0;
+                WriteA = 1'b0;
+                WriteB = 1'b0;
+                WriteALUOut = 1'b0;
+                WriteMem = 1'b0;
+                WriteInstruction = 1'b0;
+                WriteReg = 1'b0;
+
+                MemAddrCtrl = 3'b000;
+                ALUSrcACtrl = 2'b00;
+                ALUSrcBCtrl = 3'b000;
+                PCSrcCtrl = 2'b00;
+                WriteRegCtrl = 3'b000;
+                WriteDataCtrl = 3'b000;
+                ALUCtrl = 3'b000;
+                COUNTER = 3'b000;
+
+                STATE = ST_FETCH;
+            end
+
+            ST_DIV: begin
+                HILOCtrl = 1'b0;
+                WriteHILO = 1'b0;
+                DivCtrl = 1'b1;
+                MultCtrl = 1'b0;
+                WritePC = 1'b0;
+                WriteA = 1'b0;
+                WriteB = 1'b0;
+                WriteALUOut = 1'b0;
+                WriteMem = 1'b0;
+                WriteInstruction = 1'b0;
+                WriteReg = 1'b0;
+
+                MemAddrCtrl = 3'b000;
+                ALUSrcACtrl = 2'b00;
+                ALUSrcBCtrl = 3'b000;
+                PCSrcCtrl = 2'b00;
+                WriteRegCtrl = 3'b000;
+                WriteDataCtrl = 3'b000;
+                ALUCtrl = 3'b000;
+                COUNTER = 3'b000;
+
+                STATE = ST_DIV_CALC;
+            end
+
+            ST_DIV_CALC: begin // ver se ta certo
+                HILOCtrl = 1'b0;
+                WriteHILO = 1'b0;
+                DivCtrl = 1'b0;
+                MultCtrl = 1'b0;
+                WritePC = 1'b0;
+                WriteA = 1'b0;
+                WriteB = 1'b0;
+                WriteALUOut = 1'b0;
+                WriteMem = 1'b0;
+                WriteInstruction = 1'b0;
+                WriteReg = 1'b0;
+
+                MemAddrCtrl = 3'b000;
+                ALUSrcACtrl = 2'b00;
+                ALUSrcBCtrl = 3'b000;
+                PCSrcCtrl = 2'b00;
+                WriteRegCtrl = 3'b000;
+                WriteDataCtrl = 3'b000;
+                ALUCtrl = 3'b000;
+                COUNTER = 3'b000;
+		    	if (ST_DIVZERO)
+		    		STATE = ST_FETCH;           // quando tiver erro de divzero trocar aqui
+		    	else begin
+		    		if (div_end)
+		    			STATE = ST_DIV_RESULT;
+		    		else 
+		    			STATE = ST_DIV_CALC;
+		    	end
+            end
+
+            ST_DIV_RESULT: begin
+                HILOCtrl = 1'b1;
+                WriteHILO = 1'b1;
+                DivCtrl = 1'b0;
+                MultCtrl = 1'b0;
+                WritePC = 1'b0;
+                WriteA = 1'b0;
+                WriteB = 1'b0;
+                WriteALUOut = 1'b0;
+                WriteMem = 1'b0;
+                WriteInstruction = 1'b0;
+                WriteReg = 1'b0;
+
+                MemAddrCtrl = 3'b000;
+                ALUSrcACtrl = 2'b00;
+                ALUSrcBCtrl = 3'b000;
+                PCSrcCtrl = 2'b00;
+                WriteRegCtrl = 3'b000;
+                WriteDataCtrl = 3'b000;
+                ALUCtrl = 3'b000;
+                COUNTER = 3'b000;
+
+                STATE = ST_FETCH;
+            end
+
+            ST_MFHI: begin
+                HILOCtrl = 1'b0;
+                WriteHILO = 1'b0;
+                DivCtrl = 1'b0;
+                MultCtrl = 1'b0;
+                WritePC = 1'b0;
+                WriteA = 1'b0;
+                WriteB = 1'b0;
+                WriteALUOut = 1'b0;
+                WriteMem = 1'b0;
+                WriteInstruction = 1'b0;
+                WriteReg = 1'b1;            //
+
+                MemAddrCtrl = 3'b000;
+                ALUSrcACtrl = 2'b00;
+                ALUSrcBCtrl = 3'b000;
+                PCSrcCtrl = 2'b00;
+                WriteRegCtrl = 3'b000;
+                WriteDataCtrl = 3'b010;     //
+                ALUCtrl = 3'b000;
+                COUNTER = 3'b000;
+
+                STATE = ST_FETCH;
+            end
+
+            ST_MFLO: begin
+                HILOCtrl = 1'b0;
+                WriteHILO = 1'b0;
+                DivCtrl = 1'b0;
+                MultCtrl = 1'b0;
+                WritePC = 1'b0;
+                WriteA = 1'b0;
+                WriteB = 1'b0;
+                WriteALUOut = 1'b0;
+                WriteMem = 1'b0;
+                WriteInstruction = 1'b0;
+                WriteReg = 1'b1;            //
+
+                MemAddrCtrl = 3'b000;
+                ALUSrcACtrl = 2'b00;
+                ALUSrcBCtrl = 3'b000;
+                PCSrcCtrl = 2'b00;
+                WriteRegCtrl = 3'b000;
+                WriteDataCtrl = 3'b001;     //
+                ALUCtrl = 3'b000;
+                COUNTER = 3'b000;
+
+                STATE = ST_FETCH;
+            end
+            
             ST_SLL: begin
                 if (COUNTER == 3'b000) begin
+                    HILOCtrl = 1'b0;
+                    WriteHILO = 1'b0;
+                    DivCtrl = 1'b0;
+                    MultCtrl = 1'b0;
                     WritePC = 1'b0;
                     WriteA = 1'b0;
                     WriteB = 1'b0;
@@ -601,6 +871,10 @@ always @(posedge clk) begin
 
                     COUNTER = COUNTER + 1'b1;
                 end else if (COUNTER == 3'b001) begin
+                    HILOCtrl = 1'b0;
+                    WriteHILO = 1'b0;
+                    DivCtrl = 1'b0;
+                    MultCtrl = 1'b0;
                     WritePC = 1'b0;
                     WriteA = 1'b0;
                     WriteB = 1'b0;
@@ -622,6 +896,10 @@ always @(posedge clk) begin
 
                     COUNTER = COUNTER + 1'b1;
                 end else if (COUNTER == 3'b010) begin
+                    HILOCtrl = 1'b0;
+                    WriteHILO = 1'b0;
+                    DivCtrl = 1'b0;
+                    MultCtrl = 1'b0;
                     WritePC = 1'b0;
                     WriteA = 1'b0;
                     WriteB = 1'b0;
@@ -645,9 +923,8 @@ always @(posedge clk) begin
                     STATE = ST_FETCH;
                 end
             end
-            
         endcase
     end
 end
-endmodule
 
+endmodule
