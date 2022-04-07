@@ -30,6 +30,7 @@ module cpu(
     wire GT;
     wire LT;
     wire Zero;
+    wire ET;
 
 // MUX Control Signals
     wire [2:0] MemAddrCtrl;
@@ -240,7 +241,7 @@ module cpu(
         Overflow,
         Negative,
         Zero,
-        Equals,
+        ET,
         GT,
         LT
     );
@@ -334,6 +335,7 @@ module cpu(
         GT,
         LT,
         Zero,
+        ET,
         WritePC,
         WriteA,
         WriteB,
