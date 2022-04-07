@@ -9,6 +9,6 @@ module ShiftSrcMux(
 // B ---------|
 // A ---------|--- Data_out --->
 
-    assign Data_out = (ShiftSrcCrtl) ? B : A;
+    assign Data_out = (ShiftSrcCrtl) ? A : B;
 
 endmodule
