@@ -20,6 +20,7 @@ module ctrl_unit(
     output reg WriteMem,
     output reg WriteInstruction,
     output reg WriteReg,
+    output reg WriteHILO,
     output reg ShiftSrcCtrl,
     output reg ShiftNCtrl,
     output reg ShiftCtrl,
@@ -640,6 +641,64 @@ always @(posedge clk) begin
                     ShiftCtrl = 3'b010;
                     ShiftSrcCtrl = 1'b0;
 
+                    COUNTER = 3'b000;
+                    STATE = ST_FETCH;
+                end
+            end
+            ST_MFHI:begin
+                WritePC = 1'b0;
+                WriteA = 1'b0;
+                WriteB = 1'b0;
+                WriteALUOut = 1'b0;
+                WriteMem = 1'b0;
+                WriteInstruction = 1'b0;
+                WriteHILO = 1'b0;      
+
+                WriteRegCtrl = 2'b00;
+                WriteDataCtrl = 3'b010;
+                WriteReg = 1'b1;
+                STATE = ST_FETCH;
+            end
+            ST_MFLO:begin
+                WritePC = 1'b0;
+                WriteA = 1'b0;
+                WriteB = 1'b0;
+                WriteALUOut = 1'b0;
+                WriteMem = 1'b0;
+                WriteInstruction = 1'b0;
+                WriteHILO = 1'b0;    
+
+                WriteRegCtrl = 2'b00;
+                WriteDataCtrl = 3'b001;
+                WriteReg = 1'b1;
+                STATE = ST_FETCH;
+            end
+            ST_BREAK:begin
+                if (COUNTER == 3'b000) begin
+                    WritePC = 1'b0;
+                    WriteA = 1'b0;
+                    WriteB = 1'b0;
+                    WriteMem = 1'b0;
+                    WriteInstruction = 1'b0;
+                        
+
+                    ALUSrcACtrl = 2'b00;
+                    ALUSrcBCtrl = 3'b001;
+                    ALUCtrl = 3'b010;
+                    WriteALUOut = 1'b1;
+
+                    COUNTER = COUNTER + 3'b001;
+                end else if (COUNTER == 3'b001) begin
+                    WriteA = 1'b0;
+                    WriteB = 1'b0;
+                    WriteMem = 1'b0;
+                    WriteInstruction = 1'b0;    
+                    WriteALUOut = 1'b0;
+
+                    WriteALUOut = 1'b0;
+                    PCSrcCtrl = 2'b10;
+                    WritePC = 1'b1;
+                    
                     COUNTER = 3'b000;
                     STATE = ST_FETCH;
                 end

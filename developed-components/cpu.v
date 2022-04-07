@@ -18,6 +18,7 @@ module cpu(
     wire WriteMem;
     wire WriteInstruction;
     wire WriteReg;
+    wire WriteHILO;
     wire [2:0] ShiftCtrl;
 
 // ALU Flags
@@ -37,6 +38,7 @@ module cpu(
     wire [2:0] ALUCtrl;
     wire [1:0] ShiftNCtrl;
     wire ShiftSrcCrtl;
+    wire HILOCrtl;
     
 // Data Wires (32 BITS)
     wire [31:0] PCSrc;
@@ -55,8 +57,8 @@ module cpu(
     wire [31:0] Mem_Data;
     wire [31:0] ExceptionDestiny;
     wire [31:0] EPCOut;
-    wire [31:0] LO;
-    wire [31:0] HI;
+    wire [31:0] LOOut;
+    wire [31:0] HIOut;
     wire [31:0] LTSignExtend;
     wire [31:0] ShiftLeft4;
     wire [31:0] ShiftRegOut;
@@ -67,6 +69,8 @@ module cpu(
     wire [31:0] ALUResult;
     wire [31:0] WriteData;
     wire [31:0] ShiftRegIn;
+    wire [31:0] MuxHIOut;
+    wire [31:0] MuxLOOut;
 
 // Data Wires (Less than 32 BITS)
     wire [4:0] WriteRegOut;
@@ -113,6 +117,21 @@ module cpu(
         ALUOut
     );
 
+    Registrador HI_reg(
+        clk,
+        reset,
+        WriteHILO,
+        MuxHIOut,
+        HIOut
+    );
+
+    Registrador LO_reg(
+        clk,
+        reset,
+        WriteHILO,
+        MuxLOOut,
+        LOOut
+    );
 // Multiplexers
 
     memAddrMux memAddr_mux(
@@ -160,8 +179,8 @@ module cpu(
     WriteDataMux WriteData_mux(
         WriteDataCtrl,
         ALUOut,
-        LO,
-        HI,
+        LOOut,
+        HIOut,
         LTSignExtend,
         ShiftLeft4,
         ShiftRegOut,
@@ -183,6 +202,21 @@ module cpu(
         A,
         ShiftRegIn
     );
+
+    HIMux HI_mux(
+        HILOCrtl,
+        Mult,
+        Div,
+        MuxHIOut
+    );
+
+    LOMux LO_mux(
+        HILOCrtl,
+        Mult,
+        Div,
+        MuxLOOut
+    );
+
 
 // High level components
 
@@ -263,6 +297,7 @@ module cpu(
         WriteMem,
         WriteInstruction,
         WriteReg,
+        WriteHILO,
         ShiftSrcCrtl,
         ShiftNCtrl,
         ShiftCtrl,
