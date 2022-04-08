@@ -1012,6 +1012,7 @@ always @(posedge clk) begin
                 COUNTER = 3'b000;
                 STATE = ST_FETCH;
                 end else begin
+                    COUNTER = 3'b000;
                     STATE = ST_FETCH;
                 end
             end
@@ -1070,6 +1071,7 @@ always @(posedge clk) begin
                 COUNTER = 3'b000;
                 STATE = ST_FETCH;
                 end else begin
+                    COUNTER = 3'b000;
                     STATE = ST_FETCH; 
                 end
             end
@@ -1129,6 +1131,7 @@ always @(posedge clk) begin
                 STATE = ST_FETCH;
 
                 end else begin
+                    COUNTER = 3'b000;
                     STATE = ST_FETCH; 
                 end
 
@@ -1189,6 +1192,7 @@ always @(posedge clk) begin
                 STATE = ST_FETCH;
                 end 
                 else begin
+                    COUNTER = 3'b000;
                     STATE = ST_FETCH; 
                 end
 

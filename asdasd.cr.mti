@@ -34,6 +34,13 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity Instr_Reg
 -- Compiling architecture behavioral_arch of Instr_Reg
 
+} {} {}} C:/projeto-infrahard/developed-components/ShiftLeft2.v {1 {vlog -work work -stats=none C:/projeto-infrahard/developed-components/ShiftLeft2.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ShiftLeft2
+
+Top level modules:
+	ShiftLeft2
+
 } {} {}} C:/projeto-infrahard/developed-components/mux/PCSrcCtrlMux.v {1 {vlog -work work -stats=none C:/projeto-infrahard/developed-components/mux/PCSrcCtrlMux.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module PCSrcCtrlMux
@@ -118,6 +125,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	ShiftNMux
 
+} {} {}} C:/projeto-infrahard/developed-components/cpu.v {1 {vlog -work work -stats=none C:/projeto-infrahard/developed-components/cpu.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module cpu
+
+Top level modules:
+	cpu
+
 } {} {}} C:/projeto-infrahard/developed-components/mux/WriteDataMuxTest.v {1 {vlog -work work -stats=none C:/projeto-infrahard/developed-components/mux/WriteDataMuxTest.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module WriteDataMux
@@ -178,6 +192,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 
 Top level modules:
 	WriteRegMux
+
+} {} {}} C:/projeto-infrahard/developed-components/ShiftLeft2_PC.v {1 {vlog -work work -stats=none C:/projeto-infrahard/developed-components/ShiftLeft2_PC.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ShiftLeft2_PC
+
+Top level modules:
+	ShiftLeft2_PC
 
 } {} {}} C:/projeto-infrahard/developed-components/mux/memAddrMux.v {1 {vlog -work work -stats=none C:/projeto-infrahard/developed-components/mux/memAddrMux.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016

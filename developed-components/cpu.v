@@ -57,7 +57,7 @@ module cpu(
     wire [31:0] MDR;
     wire [31:0] ALUSrcA;
     wire [31:0] ALUSrcB;
-    wire [31:0] Shift_Left_2;
+    wire [31:0] ShiftLeft2Out;
     wire [31:0] Sign_Extend;
     wire [31:0] Mem_Data;
     wire [31:0] ExceptionDestiny;
@@ -89,6 +89,7 @@ module cpu(
 // Data Wires (Less than 32 BITS)
     wire [4:0] WriteRegOut;
     wire [4:0] ShiftRegN;
+    wire [27:0] ShiftLeft2PCOut;
 
 
 // Instructions
@@ -98,7 +99,7 @@ module cpu(
     wire [15:0] Instruction_15_0;
 
 // Registers
-    wire [31:0] out_nxt;
+    
 
     Registrador PC_reg(
         clk,
@@ -178,7 +179,7 @@ module cpu(
     ALUBMux ALUSrcB_mux(
         ALUSrcBCtrl,
         B,
-        Shift_Left_2,
+        ShiftLeft2Out,
         Sign_Extend,
         Mem_Data,
         ALUSrcB
@@ -189,7 +190,7 @@ module cpu(
         ExceptionDestiny,
         EPCOut,
         ALUOut,
-        Shift_Left_2,
+        {PC[31:28],ShiftLeft2PCOut},
         PCSrc
     );
 
@@ -286,6 +287,17 @@ module cpu(
     SignExtend SignExtend_(
         Instruction_15_0,
         Sign_Extend
+    );
+
+// Shift Lefts
+    ShiftLeft2 Shift_Left_2(
+        Sign_Extend,
+        ShiftLeft2Out
+    );
+
+    ShiftLeft2_PC Shift_Left_2_PC(
+        {Instruction_25_21,Instruction_20_16,Instruction_15_0},
+        ShiftLeft2PCOut
     );
 
 // Mult module
