@@ -926,6 +926,86 @@ always @(posedge clk) begin
                 end
             end
 
+            ST_SLLV: begin
+                if (COUNTER == 3'b000) begin
+                    HILOCtrl = 1'b0;
+                    WriteHILO = 1'b0;
+                    DivCtrl = 1'b0;
+                    MultCtrl = 1'b0;
+                    WritePC = 1'b0;
+                    WriteA = 1'b0;
+                    WriteB = 1'b0;
+                    WriteALUOut = 1'b0;
+                    WriteMem = 1'b0;
+                    WriteInstruction = 1'b0;
+                    WriteReg = 1'b0;
+
+                    MemAddrCtrl = 3'b010;
+                    ALUSrcACtrl = 2'b01;
+                    ALUSrcBCtrl = 3'b000;
+                    PCSrcCtrl = 2'b10;
+                    WriteRegCtrl = 2'b00;
+                    WriteDataCtrl = 2'b00;
+                    ALUCtrl = 3'b100;
+                    ShiftNCtrl = 2'b00;
+                    ShiftCtrl = 3'b001;
+                    ShiftSrcCtrl = 1'b1;
+
+                    COUNTER = COUNTER + 1'b1;
+                end else if (COUNTER == 3'b001) begin
+                    HILOCtrl = 1'b0;
+                    WriteHILO = 1'b0;
+                    DivCtrl = 1'b0;
+                    MultCtrl = 1'b0;
+                    WritePC = 1'b0;
+                    WriteA = 1'b0;
+                    WriteB = 1'b0;
+                    WriteALUOut = 1'b0;
+                    WriteMem = 1'b0;
+                    WriteInstruction = 1'b0;
+                    WriteReg = 1'b0;
+
+                    MemAddrCtrl = 3'b010;
+                    ALUSrcACtrl = 2'b01;
+                    ALUSrcBCtrl = 3'b000;
+                    PCSrcCtrl = 2'b10;
+                    WriteRegCtrl = 2'b00;
+                    WriteDataCtrl = 2'b00;
+                    ALUCtrl = 3'b100;
+                    ShiftNCtrl = 2'b00;
+                    ShiftCtrl = 3'b010;
+                    ShiftSrcCtrl = 1'b1;
+
+                    COUNTER = COUNTER + 1'b1;
+                end else if (COUNTER == 3'b010) begin
+                    HILOCtrl = 1'b0;
+                    WriteHILO = 1'b0;
+                    DivCtrl = 1'b0;
+                    MultCtrl = 1'b0;
+                    WritePC = 1'b0;
+                    WriteA = 1'b0;
+                    WriteB = 1'b0;
+                    WriteALUOut = 1'b0;
+                    WriteMem = 1'b0;
+                    WriteInstruction = 1'b0;
+                    WriteReg = 1'b1;
+
+                    MemAddrCtrl = 3'b010;
+                    ALUSrcACtrl = 2'b01;
+                    ALUSrcBCtrl = 3'b000;
+                    PCSrcCtrl = 2'b10;
+                    WriteRegCtrl = 2'b00;
+                    WriteDataCtrl = 3'b110;
+                    ALUCtrl = 3'b100;
+                    ShiftNCtrl = 2'b00;
+                    ShiftCtrl = 3'b010;
+                    ShiftSrcCtrl = 1'b1;
+
+                    COUNTER = 3'b000;
+                    STATE = ST_FETCH;
+                end
+            end
+
             ST_BEQ: begin
                 if (COUNTER == 3'b000) begin
                 HILOCtrl = 1'b0;
