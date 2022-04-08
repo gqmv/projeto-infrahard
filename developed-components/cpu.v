@@ -22,6 +22,7 @@ module cpu(
     wire MultCtrl;
     wire DivCtrl;
     wire WriteHILO;
+    wire WriteEPC;
     
 
 // ALU Flags
@@ -30,6 +31,7 @@ module cpu(
     wire GT;
     wire LT;
     wire Zero;
+    wire ET;
 
 // MUX Control Signals
     wire [2:0] MemAddrCtrl;
@@ -130,6 +132,30 @@ module cpu(
         ALUOut
     );
 
+    Registrador EPC_reg(
+        clk,
+        reset,
+        WriteEPC,
+        ALUResult,
+        EPCOut
+    );
+
+    Registrador HI_reg(
+        clk,
+        reset,
+        WriteHILO,
+        high_in,
+        HI
+    );
+
+    Registrador LO_reg(
+        clk,
+        reset,
+        WriteHILO,
+        low_in,
+        LO
+    );
+
 // Multiplexers
 
     memAddrMux memAddr_mux(
@@ -177,8 +203,8 @@ module cpu(
     WriteDataMux WriteData_mux(
         WriteDataCtrl,
         ALUOut,
-        LOOut,
-        HIOut,
+        LO,
+        HI,
         LTSignExtend,
         ShiftLeft4,
         ShiftRegOut,
@@ -242,7 +268,7 @@ module cpu(
         Overflow,
         Negative,
         Zero,
-        Equals,
+        ET,
         GT,
         LT
     );
@@ -301,27 +327,7 @@ module cpu(
         mult_high_out,
 		div_high_out,
 		high_in
-	);
-
-// LOW registers
-    LOWReg LOW_Reg (
-        low_in,
-        clk,
-        reset,
-        WriteHILO,
-        LO,
-        out_nxt
-    );
-
-// Hi registers
-    HIReg HI_Reg (
-        high_in,
-        clk,
-        reset,
-        WriteHILO,
-        HI,
-        out_nxt
-    );
+	);   
 
 // Control Unit
     ctrl_unit CTRL(
@@ -336,6 +342,7 @@ module cpu(
         GT,
         LT,
         Zero,
+        ET,
         WritePC,
         WriteA,
         WriteB,
@@ -343,12 +350,13 @@ module cpu(
         WriteMem,
         WriteInstruction,
         WriteReg,
-        ShiftSrcCrtl,
+        ShiftSrcCtrl,
         ShiftNCtrl,
         ShiftCtrl,
         WriteHILO,
-        MultCtrl,
         DivCtrl,
+        MultCtrl,
+        WriteEPC,
         MemAddrCtrl,
         ALUSrcACtrl,
         ALUSrcBCtrl,
