@@ -99,8 +99,6 @@ module ctrl_unit(
     parameter ST_DIV_RESULT     =       6'd49;
     parameter ST_BRANCH_COMMON  =       6'd50;
 
-    parameter ST_BRANCH_COMMON  =       6'd50;
-
     // Type R
     parameter ST_ADD            =       6'd7;      // DONE
     parameter ST_AND            =       6'd8;      // DONE
@@ -1103,7 +1101,7 @@ always @(posedge clk) begin
 
                 COUNTER = COUNTER + 1'b1;
                 
-            end else if (COUNTER == 3'b001 && (ET or LT)) begin
+            end else if (COUNTER == 3'b001 && (ET || LT)) begin
                 HILOCtrl = 1'b0;
                 WriteHILO = 1'b0;
                 DivCtrl = 1'b0;
