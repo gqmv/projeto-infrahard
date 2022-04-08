@@ -1642,7 +1642,12 @@ always @(posedge clk) begin
                     WriteALUOut = 1'b1;
                     WriteMDR = 1'b0; // Deve ser substituido por WriteMDR, "WriteMem" está somente como placeholder e deve ser substituido.
 
-                    COUNTER = COUNTER + 3'b001;
+                    if (Overflow) begin
+                        COUNTER = 3'b0;
+                        STATE = ST_OVERFLOW;
+                    end else begin
+                    COUNTER = COUNTER + 3'b001;'
+                    end
 
                 end
                 else if(COUNTER == 3'b111) begin
