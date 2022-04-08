@@ -12,19 +12,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	WriteDataMux
 
-} {} {}} C:/projeto-infrahard/developed-components/mux/ShiftSrcMux.v {1 {vlog -work work -stats=none C:/projeto-infrahard/developed-components/mux/ShiftSrcMux.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module ShiftSrcMux
-
-Top level modules:
-	ShiftSrcMux
-
 } {} {}} C:/projeto-infrahard/developed-components/SignExtend.v {1 {vlog -work work -stats=none C:/projeto-infrahard/developed-components/SignExtend.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module SignExtend
 
 Top level modules:
 	SignExtend
+
+} {} {}} C:/projeto-infrahard/developed-components/mux/ShiftSrcMux.v {1 {vlog -work work -stats=none C:/projeto-infrahard/developed-components/mux/ShiftSrcMux.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ShiftSrcMux
+
+Top level modules:
+	ShiftSrcMux
 
 } {} {}} C:/projeto-infrahard/given-components/Instr_Reg.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/projeto-infrahard/given-components/Instr_Reg.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -65,6 +65,22 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity Ula32
 -- Compiling architecture behavioral of Ula32
 
+} {} {}} C:/projeto-infrahard/developed-components/SetSizeReg.v {1 {vlog -work work -stats=none C:/projeto-infrahard/developed-components/SetSizeReg.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module SetSizeReg
+
+Top level modules:
+	SetSizeReg
+
+} {} {}} C:/projeto-infrahard/given-components/Banco_reg.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/projeto-infrahard/given-components/Banco_reg.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity Banco_reg
+-- Compiling architecture behavioral_arch of Banco_reg
+
 } {} {}} C:/projeto-infrahard/given-components/RegDesloc.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/projeto-infrahard/given-components/RegDesloc.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -82,14 +98,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	memAddrMuxTest
 
-} {} {}} C:/projeto-infrahard/given-components/Banco_reg.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/projeto-infrahard/given-components/Banco_reg.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity Banco_reg
--- Compiling architecture behavioral_arch of Banco_reg
+} {} {}} C:/projeto-infrahard/developed-components/SetSIzeMem.v {1 {vlog -work work -stats=none C:/projeto-infrahard/developed-components/SetSIzeMem.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module SetSizeMem
+
+Top level modules:
+	SetSizeMem
 
 } {} {}} C:/projeto-infrahard/developed-components/mux/ALUAMux.v {1 {vlog -work work -stats=none C:/projeto-infrahard/developed-components/mux/ALUAMux.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -192,6 +206,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 
 Top level modules:
 	WriteRegMux
+
+} {} {}} C:/projeto-infrahard/developed-components/SignExtend_1_32.v {1 {vlog -work work -stats=none C:/projeto-infrahard/developed-components/SignExtend_1_32.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module SignExtend_1_32
+
+Top level modules:
+	SignExtend_1_32
 
 } {} {}} C:/projeto-infrahard/developed-components/ShiftLeft2_PC.v {1 {vlog -work work -stats=none C:/projeto-infrahard/developed-components/ShiftLeft2_PC.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016

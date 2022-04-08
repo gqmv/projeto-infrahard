@@ -23,7 +23,9 @@ module cpu(
     wire DivCtrl;
     wire WriteHILO;
     wire WriteEPC;
-    
+    wire WriteMDR;
+    wire [1:0] SizeMem_Ctrl;
+    wire [1:0] Size_Ctrl;
 
 // ALU Flags
     wire Overflow;
@@ -76,6 +78,8 @@ module cpu(
     wire [31:0] ShiftRegIn;
     wire [31:0] MuxHIOut;
     wire [31:0] MuxLOOut;
+    wire [31:0] LT_Extended;
+    wire [31:0] SetSizeMemOut;
 
     wire [31:0] mult_high_out;
 	wire [31:0] mult_low_out;
@@ -157,6 +161,14 @@ module cpu(
         LO
     );
 
+    Registrador MDR_reg(
+        clk,
+        reset,
+        WriteMDR,
+        MemDataOut,
+        MDR
+    );
+
 // Multiplexers
 
     memAddrMux memAddr_mux(
@@ -181,7 +193,7 @@ module cpu(
         B,
         ShiftLeft2Out,
         Sign_Extend,
-        Mem_Data,
+        MemDataOut,
         ALUSrcB
     );
 
@@ -206,7 +218,7 @@ module cpu(
         ALUOut,
         LO,
         HI,
-        LTSignExtend,
+        LT_Extended,
         ShiftLeft4,
         ShiftRegOut,
         SetSizeOut,
@@ -216,7 +228,7 @@ module cpu(
     ShiftNMux ShiftN_mux(
         ShiftNCtrl,
         B,
-        Mem_Data,
+        MemDataOut,
         Instruction_15_0,
         ShiftRegN
     );
@@ -234,7 +246,7 @@ module cpu(
         memAddr,
         clk,
         WriteMem,
-        MemDataIn,
+        SetSizeMemOut,
         MemDataOut
     );
 
@@ -287,6 +299,25 @@ module cpu(
     SignExtend SignExtend_(
         Instruction_15_0,
         Sign_Extend
+    );
+
+    SignExtend_1_32 SignExtend_32(
+        LT,
+        LT_Extended
+    );
+
+// SetSizes
+    SetSizeMem Set_Size_Mem(
+        SizeMem_Ctrl,
+        MDR,
+        B,
+        SetSizeMemOut
+    );
+
+    SetSizeReg Set_Size_Reg(
+        Size_Ctrl,
+        MDR,
+        SetSizeOut
     );
 
 // Shift Lefts
@@ -369,6 +400,9 @@ module cpu(
         DivCtrl,
         MultCtrl,
         WriteEPC,
+        WriteMDR,
+        SizeMem_Ctrl,
+        Size_Ctrl,
         MemAddrCtrl,
         ALUSrcACtrl,
         ALUSrcBCtrl,

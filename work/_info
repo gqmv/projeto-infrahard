@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/intelFPGA/19.1
 vALUAMux
-Z0 !s110 1649384835
+Z0 !s110 1649444816
 !i10b 1
 !s100 0=i06VY6g@O<[3FYKC1o>2
 I?A;YU4`L>CP?MDC_T<Y943
@@ -23,7 +23,7 @@ Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1649384835.000000
+Z5 !s108 1649444815.000000
 Z6 !s107 developed-components/mux/ALUAMux.v|C:/projeto-infrahard/developed-components/mux/ALUAMuxTest.v|
 Z7 !s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/mux/ALUAMuxTest.v|
 !i113 1
@@ -67,9 +67,9 @@ R4
 r1
 !s85 0
 31
-R5
-Z10 !s107 developed-components/mux/ALUBMux.v|C:/projeto-infrahard/developed-components/mux/ALUBMuxTest.v|
-Z11 !s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/mux/ALUBMuxTest.v|
+Z10 !s108 1649444816.000000
+Z11 !s107 developed-components/mux/ALUBMux.v|C:/projeto-infrahard/developed-components/mux/ALUBMuxTest.v|
+Z12 !s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/mux/ALUBMuxTest.v|
 !i113 1
 R8
 R9
@@ -89,62 +89,62 @@ R4
 r1
 !s85 0
 31
-R5
 R10
 R11
+R12
 !i113 1
 R8
 R9
 n@a@l@u@b@mux@test
 Ebanco_reg
-Z12 w1648852677
-Z13 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
-Z14 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z15 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z13 w1648852677
+Z14 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z15 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z16 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 R2
-Z16 8C:/projeto-infrahard/given-components/Banco_reg.vhd
-Z17 FC:/projeto-infrahard/given-components/Banco_reg.vhd
+Z17 8C:/projeto-infrahard/given-components/Banco_reg.vhd
+Z18 FC:/projeto-infrahard/given-components/Banco_reg.vhd
 l0
 L69
 V:adHbk0Ym0TAKYW83J5Y[3
 !s100 hZ46CT_BzQl8j]02_Vf=o2
-Z18 OV;C;10.5b;63
+Z19 OV;C;10.5b;63
 32
-Z19 !s110 1649384834
+Z20 !s110 1649444814
 !i10b 1
-Z20 !s108 1649384834.000000
-Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/projeto-infrahard/given-components/Banco_reg.vhd|
-Z22 !s107 C:/projeto-infrahard/given-components/Banco_reg.vhd|
+Z21 !s108 1649444813.000000
+Z22 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/projeto-infrahard/given-components/Banco_reg.vhd|
+Z23 !s107 C:/projeto-infrahard/given-components/Banco_reg.vhd|
 !i113 1
-Z23 o-work work -2002 -explicit
-Z24 tExplicit 1 CvgOpt 0
+Z24 o-work work -2002 -explicit
+Z25 tExplicit 1 CvgOpt 0
 Abehavioral_arch
-R13
 R14
 R15
+R16
 DEx4 work 9 banco_reg 0 22 :adHbk0Ym0TAKYW83J5Y[3
 l93
 L85
 VY7l=BkTbhRVIWWGL4mMo60
 !s100 RmVnX=Z0eZ>VP`R`^LJ]Q1
-R18
-32
 R19
-!i10b 1
+32
 R20
+!i10b 1
 R21
 R22
-!i113 1
 R23
+!i113 1
 R24
+R25
 vcpu
-!s110 1649384833
+Z26 !s110 1649444812
 !i10b 1
-!s100 jCG^No3]Ukf=V5BFMi82L2
-IQWX_@a;Fb[4k2oCHNEn^^0
+!s100 D:QLZbEg<EA9iX<ZggaLk2
+I6Ac33YT[iZljk<Ali5mTA2
 R1
 R2
-w1649383647
+w1649442372
 8C:/projeto-infrahard/developed-components/cpu.v
 FC:/projeto-infrahard/developed-components/cpu.v
 L0 8
@@ -152,20 +152,20 @@ R4
 r1
 !s85 0
 31
-!s108 1649384833.000000
+Z27 !s108 1649444812.000000
 !s107 C:/projeto-infrahard/developed-components/cpu.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/cpu.v|
 !i113 1
 R8
 R9
 vctrl_unit
-R19
+R26
 !i10b 1
-!s100 7T5AnQTSfPM>N<dAT`?8H0
-I:AD=;9eJTl]Yac]i;2@632
+!s100 o^f_YC1cJAkOUJ;BJKFVa3
+IdPnXIUjC300h7Q^V>VBzc1
 R1
 R2
-w1649384830
+w1649444804
 8C:/projeto-infrahard/developed-components/ctrl_unit.v
 FC:/projeto-infrahard/developed-components/ctrl_unit.v
 L0 1
@@ -173,20 +173,20 @@ R4
 r1
 !s85 0
 31
-R20
+R27
 !s107 C:/projeto-infrahard/developed-components/ctrl_unit.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/ctrl_unit.v|
 !i113 1
 R8
 R9
 vdiv
-R19
+Z28 !s110 1649444813
 !i10b 1
 !s100 ?Jzk<YFAP:LR`O;0^DnC42
 Io8Ih`NJ6Rel5nMckgIRM[3
 R1
 R2
-Z25 w1649354344
+Z29 w1649354344
 8C:/projeto-infrahard/developed-components/div.v
 FC:/projeto-infrahard/developed-components/div.v
 L0 1
@@ -194,20 +194,20 @@ R4
 r1
 !s85 0
 31
-R20
+R21
 !s107 C:/projeto-infrahard/developed-components/div.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/div.v|
 !i113 1
 R8
 R9
 vHIReg
-Z26 !s110 1649364997
+Z30 !s110 1649364997
 !i10b 1
 !s100 WLZ4;GJlXPd1R]fWXc3n]1
 IiN]ifGZAJ9LjH?JK0OdR@1
 R1
 R2
-R25
+R29
 8C:/projeto-infrahard/developed-components/HIReg.v
 FC:/projeto-infrahard/developed-components/HIReg.v
 L0 1
@@ -215,7 +215,7 @@ R4
 r1
 !s85 0
 31
-Z27 !s108 1649364997.000000
+Z31 !s108 1649364997.000000
 !s107 C:/projeto-infrahard/developed-components/HIReg.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/HIReg.v|
 !i113 1
@@ -223,52 +223,52 @@ R8
 R9
 n@h@i@reg
 Einstr_reg
-Z28 w1648921225
-R14
+Z32 w1648921225
 R15
+R16
 R2
-Z29 8C:/projeto-infrahard/given-components/Instr_Reg.vhd
-Z30 FC:/projeto-infrahard/given-components/Instr_Reg.vhd
+Z33 8C:/projeto-infrahard/given-components/Instr_Reg.vhd
+Z34 FC:/projeto-infrahard/given-components/Instr_Reg.vhd
 l0
 L42
 VAfV1kYS402dnLRiFO;Z7_2
 !s100 _X]FAEHlMn?]L[?c6kUO?1
-R18
-32
 R19
-!i10b 1
+32
 R20
-Z31 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/projeto-infrahard/given-components/Instr_Reg.vhd|
-Z32 !s107 C:/projeto-infrahard/given-components/Instr_Reg.vhd|
+!i10b 1
+Z35 !s108 1649444814.000000
+Z36 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/projeto-infrahard/given-components/Instr_Reg.vhd|
+Z37 !s107 C:/projeto-infrahard/given-components/Instr_Reg.vhd|
 !i113 1
-R23
 R24
+R25
 Abehavioral_arch
-R14
 R15
+R16
 DEx4 work 9 instr_reg 0 22 AfV1kYS402dnLRiFO;Z7_2
 l59
 L56
 VTD836jU:>9m^d?0ed1C0O3
 !s100 _AcjR?n;fJneQZzaIjJFa3
-R18
-32
 R19
-!i10b 1
+32
 R20
-R31
-R32
+!i10b 1
+R35
+R36
+R37
 !i113 1
-R23
 R24
+R25
 vLOWReg
-R26
+R30
 !i10b 1
 !s100 PC1QZ;8Xh^NiS97nSX@000
 IWK`YM[OF2`ZS;L6iN@KoG1
 R1
 R2
-R25
+R29
 8C:/projeto-infrahard/developed-components/LOWReg.v
 FC:/projeto-infrahard/developed-components/LOWReg.v
 L0 1
@@ -276,7 +276,7 @@ R4
 r1
 !s85 0
 31
-R27
+R31
 !s107 C:/projeto-infrahard/developed-components/LOWReg.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/LOWReg.v|
 !i113 1
@@ -284,7 +284,7 @@ R8
 R9
 n@l@o@w@reg
 vmemAddrMux
-Z33 !s110 1649384836
+R0
 !i10b 1
 !s100 deV7am8mZz_HdhN>Hz35B1
 IN1J`;;1k20JMLkH38_h_O1
@@ -298,15 +298,15 @@ R4
 r1
 !s85 0
 31
-Z34 !s108 1649384836.000000
-Z35 !s107 developed-components/mux/memAddrMux.v|C:/projeto-infrahard/developed-components/mux/memAddrMuxTest.v|
-Z36 !s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/mux/memAddrMuxTest.v|
+R10
+Z38 !s107 developed-components/mux/memAddrMux.v|C:/projeto-infrahard/developed-components/mux/memAddrMuxTest.v|
+Z39 !s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/mux/memAddrMuxTest.v|
 !i113 1
 R8
 R9
 nmem@addr@mux
 vmemAddrMuxTest
-R33
+R0
 !i10b 1
 !s100 Jg:6YGT87SNf[S;n?]MLI1
 Il0H]Bf8`lO3zCX64[T`Po0
@@ -320,66 +320,66 @@ R4
 r1
 !s85 0
 31
-R34
-R35
-R36
+R10
+R38
+R39
 !i113 1
 R8
 R9
 nmem@addr@mux@test
 Ememoria
-R12
-Z37 DPx4 work 13 ram_constants 0 22 BbIcggj=<H_W75Jb?WIoZ0
-Z38 DPx3 lpm 14 lpm_components 0 22 kbQff^T0P6bT[7n>=YCE40
 R13
+Z40 DPx4 work 13 ram_constants 0 22 BbIcggj=<H_W75Jb?WIoZ0
+Z41 DPx3 lpm 14 lpm_components 0 22 kbQff^T0P6bT[7n>=YCE40
 R14
 R15
+R16
 R2
-Z39 8C:/projeto-infrahard/given-components/Memoria.vhd
-Z40 FC:/projeto-infrahard/given-components/Memoria.vhd
+Z42 8C:/projeto-infrahard/given-components/Memoria.vhd
+Z43 FC:/projeto-infrahard/given-components/Memoria.vhd
 l0
 L67
 V<[RFRXeHV^PMOiiinkBoS0
 !s100 __XEo>II7SFLX6Xa7VZA63
-R18
-32
 R19
-!i10b 1
+32
 R20
-Z41 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/projeto-infrahard/given-components/Memoria.vhd|
-Z42 !s107 C:/projeto-infrahard/given-components/Memoria.vhd|
+!i10b 1
+R35
+Z44 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/projeto-infrahard/given-components/Memoria.vhd|
+Z45 !s107 C:/projeto-infrahard/given-components/Memoria.vhd|
 !i113 1
-R23
 R24
+R25
 Abehavioral_arch
-R37
-R38
-R13
+R40
+R41
 R14
 R15
+R16
 DEx4 work 7 memoria 0 22 <[RFRXeHV^PMOiiinkBoS0
 l103
 L79
 VR9W83dOfA7lWR9j>i6THA2
 !s100 aLo:Seezh^aEQ@MaJf[__3
-R18
+R19
 32
-R19
-!i10b 1
 R20
-R41
-R42
+!i10b 1
+R35
+R44
+R45
 !i113 1
-R23
 R24
+R25
 vmult
-R19
+R28
 !i10b 1
 !s100 foggh1E;I2KeHhW3LMDZE2
 ImZ^jjjMESoVTUP1Q0kQfN3
 R1
 R2
-R25
+R29
 8C:/projeto-infrahard/developed-components/mult.v
 FC:/projeto-infrahard/developed-components/mult.v
 L0 1
@@ -387,14 +387,14 @@ R4
 r1
 !s85 0
 31
-R20
+R21
 !s107 C:/projeto-infrahard/developed-components/mult.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/mult.v|
 !i113 1
 R8
 R9
 vMultDivMuxes
-R33
+Z46 !s110 1649444817
 !i10b 1
 !s100 :>?0:<=9jP@_=1a9^6Q4n3
 IOaXHQ^nMQQ:SaagE@7>483
@@ -408,7 +408,7 @@ R4
 r1
 !s85 0
 31
-R34
+Z47 !s108 1649444817.000000
 !s107 C:/projeto-infrahard/developed-components/mux/MultDivMuxes.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/mux/MultDivMuxes.v|
 !i113 1
@@ -416,7 +416,7 @@ R8
 R9
 n@mult@div@muxes
 vPCSrcCtrlMux
-R33
+R46
 !i10b 1
 !s100 mb6`cXE3Cjk:Z9X6O>AiJ3
 IAlFh80@kk6dJ6omZ5`=Fo1
@@ -430,15 +430,15 @@ R4
 r1
 !s85 0
 31
-R34
-Z43 !s107 developed-components/mux/PCSrcCtrlMux.v|C:/projeto-infrahard/developed-components/mux/PCSrcCtrlMuxTest.v|
-Z44 !s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/mux/PCSrcCtrlMuxTest.v|
+R47
+Z48 !s107 developed-components/mux/PCSrcCtrlMux.v|C:/projeto-infrahard/developed-components/mux/PCSrcCtrlMuxTest.v|
+Z49 !s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/mux/PCSrcCtrlMuxTest.v|
 !i113 1
 R8
 R9
 n@p@c@src@ctrl@mux
 vPCSrcCtrlMuxTest
-R33
+R46
 !i10b 1
 !s100 doS4=V]I;cCSKRhLoT;Mm1
 IAQg4oh>do1dNA]3ASTUME1
@@ -452,114 +452,158 @@ R4
 r1
 !s85 0
 31
-R34
-R43
-R44
+R47
+R48
+R49
 !i113 1
 R8
 R9
 n@p@c@src@ctrl@mux@test
 Pram_constants
-R12
+R13
 R2
-R39
-R40
+R42
+R43
 l0
 L47
 VBbIcggj=<H_W75Jb?WIoZ0
 !s100 5;`Z:D@MR5CT6j_[c9;6h3
-R18
-32
 R19
-!i10b 1
+32
 R20
-R41
-R42
+!i10b 1
+R35
+R44
+R45
 !i113 1
-R23
 R24
+R25
 Eregdesloc
-R12
 R13
 R14
 R15
+R16
 R2
-Z45 8C:/projeto-infrahard/given-components/RegDesloc.vhd
-Z46 FC:/projeto-infrahard/given-components/RegDesloc.vhd
+Z50 8C:/projeto-infrahard/given-components/RegDesloc.vhd
+Z51 FC:/projeto-infrahard/given-components/RegDesloc.vhd
 l0
 L80
 V4GibeROOKf]^CUjTE67Bo0
 !s100 =0ZG0kkZKT?Zo?iX2R9=P1
-R18
+R19
 32
-R0
+R20
 !i10b 1
-R5
-Z47 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/projeto-infrahard/given-components/RegDesloc.vhd|
-Z48 !s107 C:/projeto-infrahard/given-components/RegDesloc.vhd|
+R35
+Z52 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/projeto-infrahard/given-components/RegDesloc.vhd|
+Z53 !s107 C:/projeto-infrahard/given-components/RegDesloc.vhd|
 !i113 1
-R23
 R24
+R25
 Abehavioral_arch
-R13
 R14
 R15
+R16
 DEx4 work 9 regdesloc 0 22 4GibeROOKf]^CUjTE67Bo0
 l98
 L93
 VDFCTADkAb^4XhT09kD<k32
 !s100 3`2HClJO^bJLd6@PodWh?3
-R18
+R19
 32
-R0
+R20
 !i10b 1
-R5
-R47
-R48
+R35
+R52
+R53
 !i113 1
-R23
 R24
+R25
 Eregistrador
-Z49 w1648752417
-R14
+Z54 w1648752417
 R15
+R16
 R2
-Z50 8C:/projeto-infrahard/given-components/Registrador.vhd
-Z51 FC:/projeto-infrahard/given-components/Registrador.vhd
+Z55 8C:/projeto-infrahard/given-components/Registrador.vhd
+Z56 FC:/projeto-infrahard/given-components/Registrador.vhd
 l0
 L53
 VD=`aG^VOPEDP69ifb8G;52
 !s100 ^e8=Z<CbNTLXR@XGZJMQo3
-R18
+R19
 32
-R0
+Z57 !s110 1649444815
 !i10b 1
 R5
-Z52 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/projeto-infrahard/given-components/Registrador.vhd|
-Z53 !s107 C:/projeto-infrahard/given-components/Registrador.vhd|
+Z58 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/projeto-infrahard/given-components/Registrador.vhd|
+Z59 !s107 C:/projeto-infrahard/given-components/Registrador.vhd|
 !i113 1
-R23
 R24
+R25
 Abehavioral_arch
-R14
 R15
+R16
 DEx4 work 11 registrador 0 22 D=`aG^VOPEDP69ifb8G;52
 l66
 L65
 V<kVfXRZJUh40ja<<lN_3:3
 !s100 EXKKzlBL1ARAk5TCN4`Vg2
-R18
+R19
 32
-R0
+R57
 !i10b 1
 R5
-R52
-R53
+R58
+R59
 !i113 1
-R23
 R24
+R25
+vSetSizeMem
+Z60 !s110 1649444821
+!i10b 1
+!s100 :NOz19[Da4AWGK5Bg]D``3
+IA1f6VO>z_EmQ=fnILCVMi0
+R1
+R2
+w1649437532
+8C:/projeto-infrahard/developed-components/SetSIzeMem.v
+FC:/projeto-infrahard/developed-components/SetSIzeMem.v
+L0 1
+R4
+r1
+!s85 0
+31
+Z61 !s108 1649444821.000000
+!s107 C:/projeto-infrahard/developed-components/SetSIzeMem.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/SetSIzeMem.v|
+!i113 1
+R8
+R9
+n@set@size@mem
+vSetSizeReg
+R60
+!i10b 1
+!s100 LJRVK0Qe3]XeeOF^RW<0h1
+IfhmfQRVkLX7FcF1BdlQcV3
+R1
+R2
+w1649442378
+8C:/projeto-infrahard/developed-components/SetSizeReg.v
+FC:/projeto-infrahard/developed-components/SetSizeReg.v
+L0 1
+R4
+r1
+!s85 0
+31
+R61
+!s107 C:/projeto-infrahard/developed-components/SetSizeReg.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/SetSizeReg.v|
+!i113 1
+R8
+R9
+n@set@size@reg
 vShiftLeft2
-Z54 !s110 1649384837
+Z62 !s110 1649444820
 !i10b 1
 !s100 ebQ6ZF9TIdKTaf;]?Agak2
 IIdkGIn?OF;[NXCcCPciHD3
@@ -573,7 +617,7 @@ R4
 r1
 !s85 0
 31
-Z55 !s108 1649384837.000000
+Z63 !s108 1649444820.000000
 !s107 C:/projeto-infrahard/developed-components/ShiftLeft2.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/ShiftLeft2.v|
 !i113 1
@@ -581,7 +625,7 @@ R8
 R9
 n@shift@left2
 vShiftLeft2_PC
-R54
+R62
 !i10b 1
 !s100 IEK^fe>oIo0N<dCe8>2AM3
 IIc?E:aASV`T@bWL_YCN4[3
@@ -595,7 +639,7 @@ R4
 r1
 !s85 0
 31
-R55
+R63
 !s107 C:/projeto-infrahard/developed-components/ShiftLeft2_PC.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/ShiftLeft2_PC.v|
 !i113 1
@@ -603,13 +647,13 @@ R8
 R9
 n@shift@left2_@p@c
 vShiftNMux
-R33
+Z64 !s110 1649444818
 !i10b 1
 !s100 =Gja]`l_48Qi>g=CWk;052
 I7e`B;7MT]mi[7_ah^dfXD2
 R1
 R2
-Z56 w1649280370
+Z65 w1649280370
 8developed-components/mux/ShiftNMux.v
 Fdeveloped-components/mux/ShiftNMux.v
 L0 1
@@ -617,21 +661,21 @@ R4
 r1
 !s85 0
 31
-R34
-Z57 !s107 developed-components/mux/ShiftNMux.v|C:/projeto-infrahard/developed-components/mux/ShiftNMuxTest.v|
-Z58 !s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/mux/ShiftNMuxTest.v|
+Z66 !s108 1649444818.000000
+Z67 !s107 developed-components/mux/ShiftNMux.v|C:/projeto-infrahard/developed-components/mux/ShiftNMuxTest.v|
+Z68 !s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/mux/ShiftNMuxTest.v|
 !i113 1
 R8
 R9
 n@shift@n@mux
 vShiftNMuxTest
-R33
+R64
 !i10b 1
 !s100 ZU3]kVUD4jhEd9P6l:O]D2
 ISh@K@1JAN2k:lefb:m;n31
 R1
 R2
-R56
+R65
 8C:/projeto-infrahard/developed-components/mux/ShiftNMuxTest.v
 FC:/projeto-infrahard/developed-components/mux/ShiftNMuxTest.v
 L0 3
@@ -639,15 +683,15 @@ R4
 r1
 !s85 0
 31
-R34
-R57
-R58
+R66
+R67
+R68
 !i113 1
 R8
 R9
 n@shift@n@mux@test
 vShiftSrcMux
-R54
+Z69 !s110 1649444819
 !i10b 1
 !s100 ?Bac@OB6aiSA;Q6UkSzSo2
 I^mJ9@S0R_OLnOG3Yok5?=1
@@ -661,21 +705,21 @@ R4
 r1
 !s85 0
 31
-R55
-Z59 !s107 developed-components/mux/ShiftSrcMux.v|C:/projeto-infrahard/developed-components/mux/ShiftSrcMuxTest.v|
-Z60 !s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/mux/ShiftSrcMuxTest.v|
+R66
+Z70 !s107 developed-components/mux/ShiftSrcMux.v|C:/projeto-infrahard/developed-components/mux/ShiftSrcMuxTest.v|
+Z71 !s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/mux/ShiftSrcMuxTest.v|
 !i113 1
 R8
 R9
 n@shift@src@mux
 vShiftSrcMuxTest
-R54
+R69
 !i10b 1
 !s100 NeQX_N_j^m6RILK;HDl;43
 ImC]aOZGVX@Ze5cT?9MT;V1
 R1
 R2
-R56
+R65
 8C:/projeto-infrahard/developed-components/mux/ShiftSrcMuxTest.v
 FC:/projeto-infrahard/developed-components/mux/ShiftSrcMuxTest.v
 L0 3
@@ -683,21 +727,21 @@ R4
 r1
 !s85 0
 31
-R55
-R59
-R60
+R66
+R70
+R71
 !i113 1
 R8
 R9
 n@shift@src@mux@test
 vSignExtend
-R19
+R28
 !i10b 1
 !s100 BZP[:M@@<Gd;`zYh`L7Zl2
 IhozYEHCi15SSJV?J2NV@F2
 R1
 R2
-Z61 w1648836224
+w1649391291
 8developed-components/SignExtend.v
 Fdeveloped-components/SignExtend.v
 L0 1
@@ -705,15 +749,37 @@ R4
 r1
 !s85 0
 31
-R20
-Z62 !s107 developed-components/SignExtend.v|C:/projeto-infrahard/developed-components/SignExtendTest.v|
-Z63 !s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/SignExtendTest.v|
+R21
+Z72 !s107 developed-components/SignExtend.v|C:/projeto-infrahard/developed-components/SignExtendTest.v|
+Z73 !s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/SignExtendTest.v|
 !i113 1
 R8
 R9
 n@sign@extend
+vSignExtend_1_32
+R62
+!i10b 1
+!s100 h``=Sdlk5GDGMSEWC2>fc0
+Ih:ObgTd^6iTTX_AXA@R6<1
+R1
+R2
+w1649437144
+8C:/projeto-infrahard/developed-components/SignExtend_1_32.v
+FC:/projeto-infrahard/developed-components/SignExtend_1_32.v
+L0 1
+R4
+r1
+!s85 0
+31
+R63
+!s107 C:/projeto-infrahard/developed-components/SignExtend_1_32.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/SignExtend_1_32.v|
+!i113 1
+R8
+R9
+n@sign@extend_1_32
 vSignExtendTest
-R19
+R28
 !i10b 1
 !s100 RUL@f6ehk1[W1DA4?7>0U0
 IKMW^`7z;<l6dhJkc?i_L93
@@ -727,56 +793,56 @@ R4
 r1
 !s85 0
 31
-R20
-R62
-R63
+R21
+R72
+R73
 !i113 1
 R8
 R9
 n@sign@extend@test
 Eula32
-R12
 R13
 R14
 R15
+R16
 R2
-Z64 8C:/projeto-infrahard/given-components/ula32.vhd
-Z65 FC:/projeto-infrahard/given-components/ula32.vhd
+Z74 8C:/projeto-infrahard/given-components/ula32.vhd
+Z75 FC:/projeto-infrahard/given-components/ula32.vhd
 l0
 L63
 VM1`EhBco;Cb9<:6CC>b?e2
 !s100 bGmbVJaTC>R`I<lBgn7@L3
-R18
+R19
 32
-R0
+R57
 !i10b 1
 R5
-Z66 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/projeto-infrahard/given-components/ula32.vhd|
-Z67 !s107 C:/projeto-infrahard/given-components/ula32.vhd|
+Z76 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/projeto-infrahard/given-components/ula32.vhd|
+Z77 !s107 C:/projeto-infrahard/given-components/ula32.vhd|
 !i113 1
-R23
 R24
+R25
 Abehavioral
-R13
 R14
 R15
+R16
 DEx4 work 5 ula32 0 22 M1`EhBco;Cb9<:6CC>b?e2
 l89
 L79
 VF94M;2UJ^55hCen3Z[Kfk0
 !s100 1E>E2KjDKb=5dkES8U2ha0
-R18
+R19
 32
-R0
+R57
 !i10b 1
 R5
-R66
-R67
+R76
+R77
 !i113 1
-R23
 R24
+R25
 vWriteDataMux
-R54
+R69
 !i10b 1
 !s100 lQnZP`;?na95F@SF2dzho3
 I_fFzjB4SlHF464A_DASKi1
@@ -790,15 +856,15 @@ R4
 r1
 !s85 0
 31
-R55
-Z68 !s107 developed-components/mux/WriteDataMux.v|C:/projeto-infrahard/developed-components/mux/WriteDataMuxTest.v|
-Z69 !s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/mux/WriteDataMuxTest.v|
+Z78 !s108 1649444819.000000
+Z79 !s107 developed-components/mux/WriteDataMux.v|C:/projeto-infrahard/developed-components/mux/WriteDataMuxTest.v|
+Z80 !s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/mux/WriteDataMuxTest.v|
 !i113 1
 R8
 R9
 n@write@data@mux
 vWriteDataMuxTest
-R54
+R69
 !i10b 1
 !s100 fhkoY=8@z@U3LKH[]Y]HK2
 ImZ0VH6IU9^V=i4X3UCFHX1
@@ -812,21 +878,21 @@ R4
 r1
 !s85 0
 31
-R55
-R68
-R69
+R78
+R79
+R80
 !i113 1
 R8
 R9
 n@write@data@mux@test
 vWriteRegMux
-R54
+R62
 !i10b 1
 !s100 OW<Gm?bb`NQ0oIahLENZI2
 IFagb<hj`U[P]g@126[8@V1
 R1
 R2
-R61
+w1648836224
 8developed-components/mux/WriteRegMux.v
 Fdeveloped-components/mux/WriteRegMux.v
 L0 1
@@ -834,15 +900,15 @@ R4
 r1
 !s85 0
 31
-R55
-Z70 !s107 developed-components/mux/WriteRegMux.v|C:/projeto-infrahard/developed-components/mux/WriteRegMuxTest.v|
-Z71 !s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/mux/WriteRegMuxTest.v|
+R78
+Z81 !s107 developed-components/mux/WriteRegMux.v|C:/projeto-infrahard/developed-components/mux/WriteRegMuxTest.v|
+Z82 !s90 -reportprogress|300|-work|work|-stats=none|C:/projeto-infrahard/developed-components/mux/WriteRegMuxTest.v|
 !i113 1
 R8
 R9
 n@write@reg@mux
 vWriteRegMuxTest
-R54
+R62
 !i10b 1
 !s100 PUEA3B_]`A2EPaeGU9zGb1
 ICZaD5Ji45ilmkodMdWb8O3
@@ -856,9 +922,9 @@ R4
 r1
 !s85 0
 31
-R55
-R70
-R71
+R78
+R81
+R82
 !i113 1
 R8
 R9
