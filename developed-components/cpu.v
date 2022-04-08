@@ -67,7 +67,7 @@ module cpu(
     wire [31:0] LO;
     wire [31:0] HI;
     wire [31:0] LTSignExtend;
-    wire [31:0] ShiftLeft4;
+    wire [31:0] ShiftLeft4Out;
     wire [31:0] ShiftRegOut;
     wire [31:0] SetSizeOut;
     wire [31:0] MemDataIn;
@@ -219,7 +219,7 @@ module cpu(
         LO,
         HI,
         LT_Extended,
-        ShiftLeft4,
+        ShiftLeft4Out,
         ShiftRegOut,
         SetSizeOut,
         WriteData
@@ -329,6 +329,11 @@ module cpu(
     ShiftLeft2_PC Shift_Left_2_PC(
         {Instruction_25_21,Instruction_20_16,Instruction_15_0},
         ShiftLeft2PCOut
+    );
+
+    ShiftLeft4 Shift_Left_4(
+        Instruction_15_0,
+        ShiftLeft4Out
     );
 
 // Mult module
