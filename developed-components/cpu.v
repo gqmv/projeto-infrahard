@@ -199,7 +199,7 @@ module cpu(
 
     PCSrcCtrlMux PCSrc_mux(
         PCSrcCtrl,
-        ExceptionDestiny,
+        SetSizeOut,
         EPCOut,
         ALUOut,
         {PC[31:28],ShiftLeft2PCOut},

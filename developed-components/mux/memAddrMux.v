@@ -29,7 +29,7 @@ module memAddrMux(
 
     assign int_regA_regB = (MemAddrCtrl[0] ? regB : regA);
     assign int_PC_253 = (MemAddrCtrl[0] ? 32'd253: PC);
-    assign int_254_255 = (MemAddrCtrl[0] ? 32'd254: 32'd255);
+    assign int_254_255 = (MemAddrCtrl[0] ? 32'd255: 32'd254);
 
     assign int_t0 = (MemAddrCtrl[1] ? int_PC_253 : int_regA_regB);
     assign int_t1 = (MemAddrCtrl[1] ? ALUOut : int_254_255);
