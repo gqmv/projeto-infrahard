@@ -194,7 +194,7 @@ always @(posedge clk) begin
                     WriteA = 1'b0;
                     WriteB = 1'b0;
                     WriteMem = 1'b0;
-                    WriteEPC = 0;
+                    WriteEPC = 1'b0;
                     WriteInstruction = 1'b1;
                     WriteMDR = 1'b0;
                     
@@ -1646,7 +1646,7 @@ always @(posedge clk) begin
                         COUNTER = 3'b0;
                         STATE = ST_OVERFLOW;
                     end else begin
-                    COUNTER = COUNTER + 3'b001;'
+                    COUNTER = COUNTER + 3'b001;
                     end
 
                 end
@@ -2077,6 +2077,7 @@ always @(posedge clk) begin
                 ShiftSrcCtrl = 1'b0;
 
                 if (COUNTER == 3'b011) begin
+                    COUNTER = 3'b000;
                     STATE = ST_EXCEPTION_END;
                 end
                 else begin
@@ -2146,10 +2147,7 @@ always @(posedge clk) begin
             end
 
             ST_OPCODE404: begin
-                HILOCtrl = 1'b0;
                 WriteHILO = 1'b0;
-                DivCtrl = 1'b0;
-                MultCtrl = 1'b0;
                 WritePC = 1'b0;
                 WriteA = 1'b0;
                 WriteB = 1'b0;
@@ -2158,46 +2156,32 @@ always @(posedge clk) begin
                 WriteInstruction = 1'b0;
                 WriteReg = 1'b0;
                 
-                MemAddrCtrl = 3'b000;
-                ALUSrcACtrl = 2'b00;
-                ALUSrcBCtrl = 3'b001;       //
-                PCSrcCtrl = 2'b00;
-                WriteRegCtrl = 3'b000;
-                WriteDataCtrl = 3'b000;
+                ALUSrcACtrl = 2'b00;        //
+                ALUSrcBCtrl = 3'b001;       //                
                 ALUCtrl = 3'b010;           //
-                ShiftNCtrl = 1'b0;
-                ShiftCtrl = 1'b0;
-                ShiftSrcCtrl = 1'b0;
-                WriteEPC = 1'b1;            //
-
+                WriteEPC = 1'b1;
+                
+                
                 STATE = ST_OPCODE404_NEXT;          // adicionar esse estado la em cima
             end
 
             ST_OPCODE404_NEXT: begin
-                HILOCtrl = 1'b0;
                 WriteHILO = 1'b0;
-                DivCtrl = 1'b0;
-                MultCtrl = 1'b0;
                 WritePC = 1'b0;
                 WriteA = 1'b0;
                 WriteB = 1'b0;
                 WriteALUOut = 1'b0;
-                WriteMem = 1'b1;            //
                 WriteInstruction = 1'b0;
                 WriteReg = 1'b0;
+                WriteEPC = 1'b0;
                 
-                MemAddrCtrl = 3'b011;       //
-                ALUSrcACtrl = 2'b00;
-                ALUSrcBCtrl = 3'b000;
-                PCSrcCtrl = 2'b00;
-                WriteRegCtrl = 3'b000;
-                WriteDataCtrl = 3'b000;
-                ALUCtrl = 3'b000;
-                ShiftNCtrl = 1'b0;
-                ShiftCtrl = 1'b0;
-                ShiftSrcCtrl = 1'b0;
+                MemAddrCtrl = 3'b011; //
+                WriteMem = 1'b0;   //
+               
+                
 
                 if (COUNTER == 3'b011) begin
+                    COUNTER = 3'b000;
                     STATE = ST_EXCEPTION_END;
                 end
                 else begin
@@ -2210,7 +2194,7 @@ always @(posedge clk) begin
                 WriteHILO = 1'b0;
                 DivCtrl = 1'b0;
                 MultCtrl = 1'b0;
-                WritePC = 1'b1;          //
+                WritePC = 1'b0;          //
                 WriteA = 1'b0;
                 WriteB = 1'b0;
                 WriteALUOut = 1'b0;
